@@ -3,33 +3,38 @@ import { Text, View, FlatList, StyleSheet, TouchableOpacity } from "react-native
 import LinearGradient from "react-native-linear-gradient";
 import { Fonts } from "../../asset/fonts/Font";
 import TextComponent from "./TextComponent";
+import { Colors } from "../constants/Colors";
 import { ConstantData } from "../constants/ConstantData";
+import { Week_of_month,MonthName } from "../constants/ConstantData";
+
 
 const AgendaCalender = () => {
-    const Week_of_month = [
-        { id: 1, day: "Sun", fullday: "Sunday" },
-        { id: 2, day: "Mon", fullday: "Monday" },
-        { id: 3, day: "Tue", fullday: "Tuesday" },
-        { id: 4, day: "Wed", fullday: "Wednesday" },
-        { id: 5, day: "Thu", fullday: "Thursday" },
-        { id: 6, day: "Fri", fullday: "Friday" },
-        { id: 7, day: "Sat", fullday: "Saturday" }
-    ];
+    // const Week_of_month = [
+    //     { id: 1, day: "Sun", fullday: "Sunday" },
+    //     { id: 2, day: "Mon", fullday: "Monday" },
+    //     { id: 3, day: "Tue", fullday: "Tuesday" },
+    //     { id: 4, day: "Wed", fullday: "Wednesday" },
+    //     { id: 5, day: "Thu", fullday: "Thursday" },
+    //     { id: 6, day: "Fri", fullday: "Friday" },
+    //     { id: 7, day: "Sat", fullday: "Saturday" }
+    // ];
 
-    const MonthName = [
-        { id: 1, title: "Jan" },
-        { id: 2, title: "Feb" },
-        { id: 3, title: "Mar" },
-        { id: 4, title: "Apr" },
-        { id: 5, title: "May" },
-        { id: 6, title: "Jun" },
-        { id: 7, title: "Jul" },
-        { id: 8, title: "Aug" },
-        { id: 9, title: "Sep" },
-        { id: 10, title: "Oct" },
-        { id: 11, title: "Nov" },
-        { id: 12, title: "Dec" }
-    ];
+    // const Monthweek= ConstantData.Week_of_month;
+
+    // const MonthName = [
+    //     { id: 1, title: "Jan" },
+    //     { id: 2, title: "Feb" },
+    //     { id: 3, title: "Mar" },
+    //     { id: 4, title: "Apr" },
+    //     { id: 5, title: "May" },
+    //     { id: 6, title: "Jun" },
+    //     { id: 7, title: "Jul" },
+    //     { id: 8, title: "Aug" },
+    //     { id: 9, title: "Sep" },
+    //     { id: 10, title: "Oct" },
+    //     { id: 11, title: "Nov" },
+    //     { id: 12, title: "Dec" }
+    // ];
 
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
@@ -55,7 +60,7 @@ const AgendaCalender = () => {
 
         return (
             <View>
-                <LinearGradient colors={['#13359B', '#2F63D0']}
+                <LinearGradient colors={[Colors.LGdarkblue, Colors.Blue]}
                     start={{ x: 1, y: 0}} end={{ x: 1, y: 1 }}
                     style={styles.calendarContainer}>
                     <FlatList
@@ -67,20 +72,20 @@ const AgendaCalender = () => {
                                 {item === currentDayOfMonth ? (
                                     <LinearGradient
                                         style={styles.linear}
-                                        colors={['#2251D84D', '#ffffff']}
+                                        colors={[Colors.LGskyblue, Colors.White]}
                                         start={{ x: 0.2, y: 0 }}
                                         end={{ x: 1, y: 1.5 }}
                                         >
-                                        <TextComponent size={20} color={"#ffffff"} styles_font={{alignSelf: "center"}} weight={"700"}
+                                        <TextComponent size={20} color={Colors.White} styles_font={{alignSelf: "center"}} weight={"700"}
                                         >{item}</TextComponent>
-                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={"#ffffff"}
+                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
                                         >{getDayOfWeek(item)}</TextComponent>
                                     </LinearGradient>
                                 ) : (
                                     <View>
-                                        <TextComponent size={20} color={"#ffffff"} styles_font={{alignSelf: "center"}} weight={"700"}
+                                        <TextComponent size={20} color={Colors.White} styles_font={{alignSelf: "center"}} weight={"700"}
                                         >{item}</TextComponent>                 
-                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={"#ffffff"}
+                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
                                         >{getDayOfWeek(item)}</TextComponent>                                   
                                         </View>
                                 )}
@@ -90,32 +95,32 @@ const AgendaCalender = () => {
                 </LinearGradient>
                 <View style={styles.view}>
                     <View style={styles.dateInfo}>
-                        <TextComponent size={38} weight={"700"} color={"#3C3C3C"} styles_font={{alignSelf:"center"}}
+                        <TextComponent size={38} weight={"700"} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
                         >{currentDayOfMonth}</TextComponent>
-                        <TextComponent size={26} weight={"700"} color={"#3C3C3C"} styles_font={{alignSelf:"center"}}
+                        <TextComponent size={26} weight={"700"} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
                         >{MonthName[currentMonth]?.title}</TextComponent>
-                        <TextComponent size={13} weight={"400"} color={"#B2B7C7"} styles_font={{alignSelf:"center"}}
+                        <TextComponent size={13} weight={"400"} color={Colors.Grey} styles_font={{alignSelf:"center"}}
                         >{currentWeekDayName}</TextComponent>
                     </View>
                     <View style={styles.trainingInfo}>
-                        <TextComponent size={17} weight={"400"} color={"#3C3C3C"} styles_font={{marginTop:15}}
+                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
                         >Scheduled Trainings </TextComponent>
-                        <TextComponent size={17} weight={"400"} color={"#3C3C3C"} styles_font={{marginTop:15}}
+                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
                         >Resheduling Requests </TextComponent>                        
-                        <TextComponent size={17} weight={"400"} color={"#3C3C3C"} styles_font={{marginTop:15}}
+                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
                         >Completed Trainings </TextComponent>                        
-                        <TextComponent size={17} weight={"400"} color={"#3C3C3C"} styles_font={{marginTop:15}}
+                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
                         >Canceled Trainings </TextComponent>              
                     </View>
                     <View>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: "#E6EDFE"}
-                        ]}width={70} size={14} weight={"400"} color={"#2F63D0"}>5</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: "#FFF4CC"}
-                        ]} width={70} size={14} weight={"400"} color={"#FF9900"}>1</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: "#CCFFE0"}
-                        ]} width={70} size={14} weight={"400"} color={"#00D856"}>50</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: "#FFD7D5"}]} width={70}
-                         size={14} weight={"400"} color={"#E84556"}>0</TextComponent>
+                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightblue}
+                        ]}width={70} size={14} weight={"400"} color={Colors.Blue}>5</TextComponent>
+                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightorange}
+                        ]} width={70} size={14} weight={"400"} color={Colors.Orange}>1</TextComponent>
+                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightgreen}
+                        ]} width={70} size={14} weight={"400"} color={Colors.Switchgreen}>50</TextComponent>
+                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightpink}]} width={70}
+                         size={14} weight={"400"} color={Colors.Red}>0</TextComponent>
                     </View>
                 </View>
             </View>
@@ -124,7 +129,7 @@ const AgendaCalender = () => {
 
     const styles = StyleSheet.create({
         calendarContainer: {
-            backgroundColor: "#13359B",
+            backgroundColor: Colors.LGdarkblue,
             height: 90,
             alignSelf: "center",
             borderTopLeftRadius: 10,
@@ -147,7 +152,7 @@ const AgendaCalender = () => {
         },
         view: {
             width: "90%",
-            backgroundColor: "#ffffff",
+            backgroundColor: Colors.White,
             height: 175,
             flexDirection: "row",
             alignSelf: "center",

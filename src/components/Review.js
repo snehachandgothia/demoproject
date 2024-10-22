@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, TouchableOpacity, View ,FlatList} from "react-native";
 import TextComponent from "./TextComponent";
+import { Colors } from "../constants/Colors";
 
 const Review=()=>{
     const[checked,setChecked]=useState(false);
     const[open,setOpen]=useState(false); 
-
 
     const toggle=()=>{
         setChecked(!checked);
@@ -24,11 +24,11 @@ const Review=()=>{
             <View style={{marginTop:8,marginLeft:10}}>
             <Image source={item.star}/>
             <TextComponent
-            size={14} weight={"400"} color={"#3C3C3C"}>{item.title}</TextComponent>
+            size={14} weight={"400"} color={Colors.Darkgrey}>{item.title}</TextComponent>
             </View>
             </View>
             <TextComponent
-            size={14} weight={"400"} color={"#B2B7C7"} width={270} styles_font={{marginTop:5}}>{item.text}</TextComponent>
+            size={14} weight={"400"} color={Colors.Grey} width={270} styles_font={{marginTop:5}}>{item.text}</TextComponent>
         </View>
     )
 
@@ -36,7 +36,7 @@ const Review=()=>{
         <View style={styles.view}>
            <TouchableOpacity style={{flexDirection:"row"}} onPress={toggle}>
             <TextComponent 
-            size={14} weight={"400"} color={"#3C3C3C"} styles_font={{marginLeft:10}}>Review</TextComponent>
+            size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginLeft:10}}>Review</TextComponent>
             <Image style={styles.image}
             source={checked?(require('../../asset/images/dropdown.png')):(require('../../asset/images/rightarrow.png'))}/>
            </TouchableOpacity>
@@ -56,7 +56,7 @@ const styles=StyleSheet.create({
         padding:10,
         borderBottomWidth:1,
         borderTopWidth:1,
-        borderColor:"#ECEDF2",
+        borderColor:Colors.Darkbordergrey,
     },
     image:{
         marginTop:6,

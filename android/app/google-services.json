@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "962014968820",
+    "project_id": "beswol-127f2",
+    "storage_bucket": "beswol-127f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962014968820:android:98a1ea45fc7d9a80d197a1",
+        "android_client_info": {
+          "package_name": "com.beswol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962014968820-nr0clj2cvj7sc9rkgv55isv4c8os3lfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.beswol",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "962014968820-o2ujldv44r4a22sivip70bjsv6f2i772.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfLp8XH6nvnmUvyz4hKMqQdocHEQjEa7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962014968820-o2ujldv44r4a22sivip70bjsv6f2i772.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

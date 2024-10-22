@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {Text} from "react-native";
 import { Fonts } from "../../asset/fonts/Font";
 
-const TextComponent=({title,size,weight,color,styles_font,children,width,...props})=>{
+const TextComponent=({title,size,weight,color,styles_font,fontFamily=Fonts.SF_Regular1,textAlign,left,mhorizontal,children,width,...props})=>{
     return(
         <Text style={[styles_font,
         {fontSize:size,
@@ -10,6 +10,9 @@ const TextComponent=({title,size,weight,color,styles_font,children,width,...prop
         fontFamily:Fonts.SF_Regular1,
         color:color,
         width:width,
+        textAlign:textAlign,
+        marginLeft:left,
+        marginHorizontal:mhorizontal
         }]}
         {...props}>{children}{title}</Text>
     )

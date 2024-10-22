@@ -6,7 +6,7 @@ import ButtonComponents from "../components/ButtonComponent";
 import TextComponent from "../components/TextComponent";
 import { Colors } from "../constants/Colors";
 
-const SplashScreens = ({ navigation }) => {
+const ChooseUser = ({ navigation }) => {
     return (
         <View style={{ backgroundColor: "#ffffff" }}>
             <ImageBackground style={{ height: "100%", width: "100%" }}
@@ -41,4 +41,4 @@ const SplashScreens = ({ navigation }) => {
     )
 };
 
-export default SplashScreens;
+export default ChooseUser;

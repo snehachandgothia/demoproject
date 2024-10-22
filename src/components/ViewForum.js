@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FlatList, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ImageConstant } from "../constants/ImageConstant";
 import TextComponent from "./TextComponent";
+import { Colors } from "../constants/Colors";
 
 const ViewForum = () => {
     const[like,setLike]=useState(false);
@@ -18,15 +19,15 @@ const ViewForum = () => {
         <View style={{width:"90%",alignSelf:"center"}}>
             <View style={{flexDirection:"row",padding:5}}>
                 <TextComponent
-                size={19} weight={"700"} color={"#000000"} styles_font={{marginLeft:15}}>View forums</TextComponent>
+                size={19} weight={"700"} color={Colors.Black} styles_font={{marginLeft:15}}>View forums</TextComponent>
                 <TouchableOpacity style={{flexDirection:"row",marginLeft:35}}>
                     <TextComponent
-                    size={16} weight={"600"} color={"#000000"} styles_font={{marginLeft:25}}>Sport</TextComponent>
+                    size={16} weight={"600"} color={Colors.Black} styles_font={{marginLeft:25}}>Sport</TextComponent>
                     <Image style={styles.dropdown} source={ImageConstant.Filled}/>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <TextComponent
-                    size={16} weight={"600"} color={"#000000"} styles_font={{marginLeft:25}}>View All</TextComponent>
+                    size={16} weight={"600"} color={Colors.Black} styles_font={{marginLeft:25}}>View All</TextComponent>
                 </TouchableOpacity>
             </View>
             <FlatList
@@ -37,27 +38,27 @@ const ViewForum = () => {
                         source={item.image} />
                         <View style={{padding:10}}>
                             <TextComponent
-                            size={14} weight={"700"} color={"#FF7770"}>{item.title}</TextComponent>
+                            size={14} weight={"700"} color={Colors.Pink}>{item.title}</TextComponent>
                             <TextComponent
-                            size={10} weight={"400"} color={"#535353"} styles_font={{lineHeight:12}} width={200}>{item.text}</TextComponent>
+                            size={10} weight={"400"} color={Colors.Forumtextgrey} styles_font={{lineHeight:12}} width={200}>{item.text}</TextComponent>
                             <View style={{flexDirection:"row",marginLeft:10}}>
                                 <View>
                                    <Image style={styles.like}
                                    source={item.like}/>
                                    <TextComponent
-                                   size={8} weight={"400"} color={"#000000"}>{item.number}</TextComponent>
+                                   size={8} weight={"400"} color={Colors.Black}>{item.number}</TextComponent>
                                 </View>
                                 <View style={{marginLeft:60}}>
                                     <Image style={styles.like}
                                     source={item.unlike}/>
                                    <TextComponent 
-                                   size={8} weight={"400"} color={"#000000"}>{item.number}</TextComponent>                               
+                                   size={8} weight={"400"} color={Colors.Black}>{item.number}</TextComponent>                               
                                     </View>
                                 <View style={{marginLeft:60}}>
                                     <Image style={styles.like}
                                     source={item.comment}/>
                                    <TextComponent
-                                   size={8} weight={"400"} color={"#000000"}>{item.number}</TextComponent>              
+                                   size={8} weight={"400"} color={Colors.Black}>{item.number}</TextComponent>              
                                                      </View>
                             </View>
                         </View>
@@ -86,8 +87,8 @@ const styles =StyleSheet.create({
         shadowOpacity: 0.4,
         shadowRadius: 2,
         elevation: 3,
-        shadowColor:"#000000",
-   backgroundColor:"#ffffff"        
+        shadowColor:Colors.Black,
+   backgroundColor:Colors.White        
     },
     dropdown:{
         height:9,

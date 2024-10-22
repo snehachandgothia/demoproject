@@ -5,6 +5,7 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { Platform } from 'react-native';
 import TextComponent from './TextComponent';
+import { Colors } from '../constants/Colors';
 
 const MultiImage = () => {
   const [images, setImages] = useState([]);
@@ -90,12 +91,12 @@ const MultiImage = () => {
           <TouchableOpacity style={styles.button} onPress={requestCameraPermission}>
             <Image  style={styles.camera} source={ImageConstant.Camera}/> 
             <TextComponent
-            size={16} weight={"600"} color={"#3C3C3C"}>Open Camera</TextComponent>
+            size={16} weight={"600"} color={Colors.Darkgrey}>Open Camera</TextComponent>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={pickMultipleImages}>
             <Image style={styles.camera} source={ImageConstant.Gallery}/>
             <TextComponent
-            size={16} weight={"600"} color={"#3C3C3C"}>Open Gallery</TextComponent>
+            size={16} weight={"600"} color={Colors.Darkgrey}>Open Gallery</TextComponent>
           </TouchableOpacity>
         </View>
       </Modal>
@@ -107,13 +108,13 @@ const styles = StyleSheet.create({
   modalContainer: {
     backgroundColor: 'transparent',
     width:"100%",
-    backgroundColor:"#C4E1FD",
+    backgroundColor:Colors.Backgroundblue,
     height:"20%",
     marginTop:630
   },
   button: {
     padding: 10,
-    backgroundColor: '#C4E1FD',
+    backgroundColor: Colors.Backgroundblue,
     alignSelf: 'center',
     width: '100%',
     marginTop:10,
@@ -138,7 +139,7 @@ camera:{
 picker:{
     height:75,
     width:75,
-    backgroundColor:"#E6EDFE",
+    backgroundColor:Colors.Lightblue,
     margin:10
 }
 });

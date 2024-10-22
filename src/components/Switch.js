@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import TextComponent from './TextComponent';
+import { Colors } from '../constants/Colors';
 
 const CustomSwitch = ({ isEnabled, toggleSwitch }) => {
   const animatedValue = new Animated.Value(isEnabled ? 1 : 0);
@@ -21,7 +22,7 @@ const CustomSwitch = ({ isEnabled, toggleSwitch }) => {
 
   const backgroundColorAnimation = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#ccc', '#00D856'],
+    outputRange: [Colors.Backgroundgrey, Colors.Switchgreen],
   });
 
   return (
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderRadius: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.White,
   },
 });
 
@@ -83,12 +84,12 @@ const Switchcustom = () => {
     <View >
 <View style={{flexDirection:"row"}}>
     <TextComponent
-    size={14} weight={"400"} color={"#3C3C3C"} width={285} styles_font={{marginTop:15,}}>Female</TextComponent>
+    size={14} weight={"400"} color={Colors.Darkgrey} width={285} styles_font={{marginTop:15,}}>Female</TextComponent>
       <CustomSwitch isEnabled={isEnabled} toggleSwitch={toggleSwitch1} />
 </View>
 <View style={{flexDirection:"row"}}>
   <TextComponent
-    size={14} weight={"400"} color={"#3C3C3C"} width={285} styles_font={{marginTop:15,}}>Male</TextComponent>
+    size={14} weight={"400"} color={Colors.Darkgrey} width={285} styles_font={{marginTop:15,}}>Male</TextComponent>
 <CustomSwitch isEnabled={enable} toggleSwitch={toggleswitch2}/>
 </View>
     </View>

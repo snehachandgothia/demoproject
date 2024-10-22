@@ -3,7 +3,7 @@ import { Image, ImageBackground, StyleSheet, TouchableOpacity, View } from "reac
 import { FlatList } from "react-native-gesture-handler";
 import { ImageConstant } from "../constants/ImageConstant";
 import TextComponent from "./TextComponent";
-
+import { Colors } from "../constants/Colors";
 
 const MyPackage=()=>{
     const Data=[
@@ -18,22 +18,22 @@ const MyPackage=()=>{
            source={ImageConstant.Gallerypic}>
            <View style={{flexDirection:"row"}}>
            <TextComponent
-           size={16} weight={"600"} color={"#ffffff"}>{item.title}</TextComponent>
+           size={16} weight={"600"} color={Colors.White}>{item.title}</TextComponent>
            <TouchableOpacity>
            <Image style={styles.cancel}
            source={ImageConstant.Cut}/>
            </TouchableOpacity>
            </View>
            <TextComponent 
-           size={14} weight={"400"} color={"#FFFFFFCC"}>{item.text}</TextComponent>
+           size={14} weight={"400"} color={Colors.White}>{item.text}</TextComponent>
            <TextComponent
-           size={14} weight={"400"} color={"#FFFFFFCC"}>{item.time}</TextComponent>
+           size={14} weight={"400"} color={Colors.White}>{item.time}</TextComponent>
            <TextComponent
-           size={14} weight={"400"} color={"#FFFFFFCC"}>{item.location}</TextComponent>
+           size={14} weight={"400"} color={Colors.White}>{item.location}</TextComponent>
            <TextComponent
-           size={22} weight={"700"} color={"#ffffff"} styles_font={{marginTop:10}}>{item.price}</TextComponent>
+           size={22} weight={"700"} color={Colors.White} styles_font={{marginTop:10}}>{item.price}</TextComponent>
            <TextComponent 
-           size={14} weight={"400"} color={"#FFFFFFCC"}>{item.average}</TextComponent>
+           size={14} weight={"400"} color={Colors.White}>{item.average}</TextComponent>
            </ImageBackground>
     )
     return(

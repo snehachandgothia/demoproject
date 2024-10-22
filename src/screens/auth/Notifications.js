@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, Image, StatusBar, StyleSheet, View } from "react-native";
 import Header from "../../components/Header";
 import TextComponent from "../../components/TextComponent";
+import { Colors } from "../../constants/Colors";
 
 const Notification=()=>{
     const Data=[
@@ -10,7 +11,7 @@ const Notification=()=>{
     ];
 
     return(
-        <View style={{backgroundColor:"#ffffff"}}>
+        <View style={{backgroundColor:Colors.White}}>
             <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/>
             <Header title={"Notifications"}/>
             <FlatList
@@ -22,11 +23,11 @@ const Notification=()=>{
                     source={item.image}/>
                     <View style={{marginLeft:10}}>
                         <TextComponent
-                        size={17} weight={"700"} color={"#3C3C3C"}>{item.sender}</TextComponent>
+                        size={17} weight={"700"} color={Colors.Darkgrey}>{item.sender}</TextComponent>
                         <TextComponent
-                        size={14} weight={"400"} color={"#3C3C3C"} width={300}>{item.message}</TextComponent>
+                        size={14} weight={"400"} color={Colors.Darkgrey} width={300}>{item.message}</TextComponent>
                         <TextComponent
-                        size={14} weight={"400"} color={"#B2B7C7"}>{item.timing}</TextComponent>
+                        size={14} weight={"400"} color={Colors.Grey}>{item.timing}</TextComponent>
                     </View>
                 </View>
     )}
@@ -40,7 +41,7 @@ const styles=StyleSheet.create({
         flexDirection:"row",
         padding:10,
         borderBottomWidth:1,
-        borderColor:"#ECEDF2"
+        borderColor:Colors.Darkbordergrey,
     }
 })
 

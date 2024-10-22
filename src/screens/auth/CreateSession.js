@@ -7,18 +7,19 @@ import { ScrollView } from "react-native-gesture-handler";
 import CustomSwitch from "../../components/Switch";
 import Header from "../../components/Header";
 import TextComponent from "../../components/TextComponent";
+import { Colors } from "../../constants/Colors";
 
 const CreateSession = ({ navigation }) => {
 
     return (
-            <ScrollView style={{backgroundColor:"#ffffff"}}>
+            <ScrollView style={{backgroundColor:Colors.White}}>
                 <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
                 <Header onPress={() => { navigation.navigate('Profile2') }} title={'Create Session'} />
                 <View style={[styles.select, styles.border]}>
                     <TextComponent 
                         size={18} 
                         weight={"500"} 
-                        color={"#3C3C3C"} 
+                        color={Colors.Darkgrey} 
                         width={130}
                         styles_font={{marginVertical: 30}} 
                     >Age</TextComponent>
@@ -36,7 +37,7 @@ const CreateSession = ({ navigation }) => {
                 <TextComponent 
                     size={18} 
                     weight={"600"} 
-                    color={"#3C3C3C"} 
+                    color={Colors.Darkgrey} 
                     styles_font={{marginVertical: 10,
                         marginLeft: 20,
                         paddingTop: 10}} 
@@ -47,7 +48,7 @@ const CreateSession = ({ navigation }) => {
                 <TextComponent 
                     size={18} 
                     weight={"600"} 
-                    color={"#3C3C3C"} 
+                    color={Colors.Darkgrey} 
                     styles_font={{marginVertical: 10,
                         marginLeft: 20,
                         paddingTop: 10}} 
@@ -59,7 +60,7 @@ const CreateSession = ({ navigation }) => {
                     <TextComponent 
                         size={18} 
                         weight={"500"} 
-                        color={"#3C3C3C"} 
+                        color={Colors.Darkgrey} 
                         styles_font={{marginVertical: 30}} 
                     >Session Duration</TextComponent>
                     <View style={styles.container}>
@@ -77,7 +78,7 @@ const CreateSession = ({ navigation }) => {
                     <TextComponent 
                         size={18} 
                         weight={"500"} 
-                        color={"#3C3C3C"} 
+                        color={Colors.Darkgrey} 
                         styles_font={{marginVertical: 30}} 
                     >Price for package</TextComponent>
                     <TextInput style={styles.input} placeholder="from 10 AED" />
@@ -102,11 +103,11 @@ const styles = StyleSheet.create({
     },
     border: {
         borderBottomWidth: 1,
-        borderColor: "#ECEDF2"
+        borderColor: Colors.Darkbordergrey
     },
     input: {
         height: 50,
-        borderColor: 'gray',
+        borderColor: Colors.Bordergrey,
         borderWidth: 0.1,
         borderRadius: 3,
         paddingHorizontal: 8,

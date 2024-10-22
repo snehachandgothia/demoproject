@@ -1,5 +1,5 @@
-export const ConstantData=()=>{
-        const Week_of_month = [
+// export const ConstantData=()=>{
+      export const Week_of_month = [
             { id: 1, day: "Sun", fullday: "Sunday" },
             { id: 2, day: "Mon", fullday: "Monday" },
             { id: 3, day: "Tue", fullday: "Tuesday" },
@@ -9,7 +9,7 @@ export const ConstantData=()=>{
             { id: 7, day: "Sat", fullday: "Saturday" }
         ];
 
-        const MonthName = [
+      export const MonthName = [
             { id: 1, title: "Jan" },
             { id: 2, title: "Feb" },
             { id: 3, title: "Mar" },
@@ -23,4 +23,19 @@ export const ConstantData=()=>{
             { id: 11, title: "Nov" },
             { id: 12, title: "Dec" }
         ];
-    };
+
+       export const Data = [
+            {
+                id: 1, image: require('../../asset/images/IntroImage1.png'), title: "Get train bookings",
+                text: "Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem."
+            },
+            {
+                id: 2, image: require('../../asset/images/IntroImage2.png'), title: "Train in your time",
+                text: "Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem."
+            },
+            {
+                id: 3, image: require('../../asset/images/IntroImage3.png'), title: "Get money and feedback",
+                text: "Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem."
+            },
+        ];
+    // };

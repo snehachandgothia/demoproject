@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 import TextComponent from "./TextComponent";
 import { ImageConstant } from "../constants/ImageConstant";
+import { Colors } from "../constants/Colors";
 
 const RateClient = ({ title }) => {
     const [selectedStars, setSelectedStars] = useState(0);
@@ -31,7 +32,7 @@ const RateClient = ({ title }) => {
                 styles_font={{ marginLeft: 115 }}
                 size={15}
                 weight={"700"}
-                color={"#3C3C3C"}
+                color={Colors.Darkgrey}
             >{title}</TextComponent>
         </View>
     );

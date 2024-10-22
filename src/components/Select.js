@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
+import { Colors } from '../constants/Colors';
 
 const Select=({name,placeholder,style_dd})=>{
   const [selectedValue, setSelectedValue] = useState(null);
@@ -28,7 +29,7 @@ const Select=({name,placeholder,style_dd})=>{
 const styles = StyleSheet.create({
   dropdown: {
     height: 50,
-    borderColor: 'gray',
+    borderColor: Colors.Bordergrey,
     borderWidth: 0.1,
     borderRadius: 3,
     paddingHorizontal: 15,

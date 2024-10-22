@@ -3,6 +3,7 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageConstant } from "../constants/ImageConstant";
 import TextComponent from "./TextComponent";
+import { Colors } from "../constants/Colors";
 
 const SessionComponent=()=>{
     const Data=[
@@ -16,23 +17,23 @@ const SessionComponent=()=>{
         <View style={styles.view}>
            <View style={{flexDirection:"row"}}>
            <TextComponent
-           size={16} weight={"700"} color={"#3C3C3C"}>{item.title}</TextComponent>
+           size={16} weight={"700"} color={Colors.Darkgrey}>{item.title}</TextComponent>
            <TouchableOpacity>
            <Image style={styles.cancel}
            source={ImageConstant.Cancel}/>
            </TouchableOpacity>
            </View>
            <TextComponent
-           size={14} weight={"400"} color={"#3C3C3CCC"}>{item.text}</TextComponent>
+           size={14} weight={"400"} color={Colors.Darkgrey}>{item.text}</TextComponent>
            <TextComponent
-           size={14} weight={"400"} color={"#3C3C3CCC"}>{item.time}</TextComponent>
+           size={14} weight={"400"} color={Colors.Darkgrey}>{item.time}</TextComponent>
            <TextComponent 
-           size={14} weight={"400"} color={"#3C3C3CCC"}>{item.location}</TextComponent>
+           size={14} weight={"400"} color={Colors.Darkgrey}>{item.location}</TextComponent>
            <TextComponent
-           size={22} weight={"700"} color={"#3C3C3C"}>{item.price}</TextComponent>
+           size={22} weight={"700"} color={Colors.Darkgrey}>{item.price}</TextComponent>
            <TouchableOpacity style={styles.button}>
             <TextComponent
-            size={12} weight={"400"} color={"#ffffff"} styles_font={{alignSelf:"center",}}>Create Packages</TextComponent>
+            size={12} weight={"400"} color={Colors.White} styles_font={{alignSelf:"center",}}>Create Packages</TextComponent>
            </TouchableOpacity>
         </View>
     )
@@ -53,14 +54,14 @@ const styles=StyleSheet.create({
     view:{
         height:165,
         width:165,
-        backgroundColor:"#ECEDF2",
+        backgroundColor:Colors.Darkbordergrey,
         borderRadius:10,
         marginLeft:20,
         paddingLeft:10,
         paddingTop:8,
     },
     button:{
-        backgroundColor:"#2F63D0",
+        backgroundColor:Colors.Blue,
         paddingVertical:5,
         borderRadius:50,
         width:"70%",

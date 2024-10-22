@@ -3,6 +3,7 @@ import { StatusBar, StyleSheet, TouchableOpacity, View, FlatList, Image } from "
 import Header from "../../components/Header";
 import { ScrollView } from "react-native-gesture-handler";
 import TextComponent from "../../components/TextComponent";
+import { Colors } from "../../constants/Colors";
 
 const MySessions = () => {
     const [selectedTab, setSelectedTab] = useState('All');
@@ -24,7 +25,7 @@ const MySessions = () => {
     ];
 
     return (
-            <ScrollView style={{backgroundColor:"#ffffff"}}>
+            <ScrollView style={{backgroundColor:Colors.White}}>
                 <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
                 <Header title={"My Sessions"} />
                 <View style={{ flexDirection: "row", width: "90%", alignSelf: "center" }}>
@@ -35,7 +36,7 @@ const MySessions = () => {
                         <TextComponent 
                             size={16} 
                             weight="400" 
-                            color={selectedTab === "All" ? "#2F63D0" : "#3C3C3C"} 
+                            color={selectedTab === "All" ? Colors.Blue : Colors.Darkgrey} 
                         >All</TextComponent>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -45,7 +46,7 @@ const MySessions = () => {
                         <TextComponent 
                             size={16} 
                             weight="400" 
-                            color={selectedTab === "Purchased" ? "#2F63D0" : "#3C3C3C"} 
+                            color={selectedTab === "Purchased" ? Colors.Blue : Colors.Darkgrey} 
                         >Purchased</TextComponent>
                     </TouchableOpacity>
                 </View>
@@ -59,9 +60,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} weight="700" color={"#000"} >{item.title}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={"#3C3C3C"} >{item.text}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={"#3C3C3C"} >{item.place} </TextComponent>
+                                            <TextComponent size={16} weight="700" color={Colors.Black} >{item.title}</TextComponent>
+                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.text}</TextComponent>
+                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.place} </TextComponent>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -70,7 +71,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} weight="700" color={"#000"} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
+                                    <TextComponent size={18} weight="700" color={Colors.Black} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
                                 </View>
                             )}
                         />
@@ -83,9 +84,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} weight="700" color={"#000"} >{item.title}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={"#3C3C3C"} >{item.text}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={"#3C3C3C"} >{item.place}</TextComponent>
+                                            <TextComponent size={16} weight="700" color={Colors.Black} >{item.title}</TextComponent>
+                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.text}</TextComponent>
+                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.place}</TextComponent>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -94,7 +95,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} weight="700" color={"#000"} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
+                                    <TextComponent size={18} weight="700" color={Colors.Black} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
                                 </View>
                             )}
                         />
@@ -112,17 +113,17 @@ const styles = StyleSheet.create({
     },
     selectedBox: {
         borderBottomWidth: 2,
-        borderColor: "#2F63D0",
+        borderColor: Colors.Blue,
     },
     session: {
         width: "90%",
         padding: 10,
-        shadowColor: '#000000',
+        shadowColor: Colors.Black,
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.4,
         shadowRadius: 2,
         elevation: 3,
-        backgroundColor: "#ffffff",
+        backgroundColor: Colors.White,
         marginVertical: 10,
         alignSelf: "center"
     },

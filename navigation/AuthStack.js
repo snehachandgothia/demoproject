@@ -1,6 +1,6 @@
 import React from "react";
 import OnBoarding from "../src/screens/OnBoarding";
-import SplashScreens from "../src/screens/SplashScreens";
+import ChooseUser from "../src/screens/Chooseuser";
 import SignUp from "../src/screens/auth/SignUp";
 import Verify from "../src/screens/auth/Verify";
 import ChooseCategory from "../src/screens/auth/ChooseCategory";
@@ -21,7 +21,7 @@ function MyStack(){
     return(
         <NavigationContainer>
             <Auth.Navigator>
-                <Auth.Screen name="SplashScreens" component={SplashScreens} options={{headerShown:false}}/>
+                <Auth.Screen name="ChooseUser" component={ChooseUser} options={{headerShown:false}}/>
                 <Auth.Screen name="OnBoarding" component={OnBoarding} options={{headerShown:false}}/>
                 <Auth.Screen name="SignUp" component={SignUp} options={{headerShown:false}}/>
                 <Auth.Screen name="Verify" component={Verify} options={{headerShown:false}}/>

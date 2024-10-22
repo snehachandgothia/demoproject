@@ -33,5 +33,7 @@ export const ImageConstant={
     Whitearrow:require('../../asset/images/whitearrow.png'),
     Filled:require('../../asset/images/filleddown.png'),
     Ratingstar:require('../../asset/images/ratingstar.png'),
-    Yellowstar:require('../../asset/images/yellowstar.png')
+    Yellowstar:require('../../asset/images/yellowstar.png'),
+    Female:require('../../asset/images/female.png'),
+    Male:require('../../asset/images/male.png')
     };

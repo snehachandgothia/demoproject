@@ -3,10 +3,11 @@ import { StyleSheet, TextInput, View, StatusBar, TouchableOpacity } from "react-
 import MainText from "../../components/MainText";
 import Timer from "../../components/Timer";
 import NextButton from "../../components/NextButton";
+import { Colors } from "../../constants/Colors";
 
 const Verify = ({ navigation }) => {
     return (
-        <View style={{backgroundColor:"#ffffff",flex:1}}>
+        <View style={{backgroundColor:Colors.White,flex:1}}>
             <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
             <MainText
                 text={"Verify your phone no. by entering the OTP."} />
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         height: 67,
         width: 67,
         borderRadius: 2,
-        backgroundColor: "#F0F0F0",
+        backgroundColor: Colors.Greywhite,
         fontSize:30,
         textAlign:"center"
     },

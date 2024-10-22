@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import { Fonts } from '../../asset/fonts/Font';
+import { Colors } from '../constants/Colors';
 
 const CategoryDD=({placeholder,name})=>{
   const [selectedValue, setSelectedValue] = useState(null);
@@ -37,20 +38,20 @@ const styles = StyleSheet.create({
   },
   dropdown: {
     height: 50,
-    borderColor: 'gray',
+    borderColor: Colors.Bordergrey,
     borderBottomWidth: 0.1,
     borderRadius: 3,
     paddingHorizontal: 8,
   },
   selectedTextStyle: {
     fontSize: 16,
-    color:"#183CA4"
+    color:Colors.Darkblue
   },
   placeholder:{
     fontSize:14,
     fontWeight:"700",
     fontFamily:Fonts.SF_Regular1,
-    color:"#3C3C3C"
+    color:Colors.Darkgrey
   },
 });
 export default CategoryDD;

@@ -2,6 +2,7 @@ import React from "react";
 import { Image, StyleSheet,TouchableOpacity, View } from "react-native";
 import { ImageConstant } from "../constants/ImageConstant";
 import TextComponent from "./TextComponent";
+import { Colors } from "../constants/Colors";
 
 const Header=({onPress,title})=>{
     return(
@@ -11,7 +12,7 @@ const Header=({onPress,title})=>{
                 source={ImageConstant.Back}/>
             </TouchableOpacity>
             <TextComponent size={20} weight={"400"} 
-            color={"#3C3C3C"} styles_font={{marginLeft: 10}}>{title}</TextComponent>
+            color={Colors.Darkgrey} styles_font={{marginLeft: 10}}>{title}</TextComponent>
         </View>
     )
 };
@@ -21,7 +22,7 @@ const styles=StyleSheet.create({
         marginTop: "17%",
         flexDirection: "row",
         borderBottomWidth: 1,
-        borderColor: "#ECEDF2",
+        borderColor: Colors.Darkbordergrey,
         paddingBottom: 20,
     },
     back: {

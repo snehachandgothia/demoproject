@@ -5,7 +5,6 @@ import TextComponent from "./TextComponent";
 const ButtonComponents=({text,style_bgcolor,style_color})=>{
     return(
         <View style={[styles.button,style_bgcolor]}>
-                {/* <Text style={[styles.text, style_color]}>{text}</Text> */}
                 <TextComponent size={18} weight={"700"} color={style_color}>{text}</TextComponent>
         </View>
     )
@@ -13,7 +12,6 @@ const ButtonComponents=({text,style_bgcolor,style_color})=>{
 
 const styles=StyleSheet.create({
     button:{
-        // backgroundColor:"aqua",
         paddingVertical:20,
         paddingHorizontal:35,
         marginLeft:23,
