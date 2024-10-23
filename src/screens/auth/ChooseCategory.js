@@ -57,7 +57,7 @@ const ChooseCategory = () => {
                         { label: 'Passing', value: '3' },
                         { label: 'Befeure', value: '4' },
                     ]} />
-<TouchableOpacity style={{marginTop:110}}>
+<TouchableOpacity style={{marginTop:150}}>
 <NextButton title={'NEXT'}/>
 </TouchableOpacity>
         </View>

@@ -5,17 +5,15 @@ import NextButton from "../../components/NextButton";
 import Imagepicker from "../../components/ImagePicker";
 import TextComponent from "../../components/TextComponent";
 import { Colors } from "../../constants/Colors";
-// import {GoogleSignin} from "react-native-login-google"
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-// import auth from '@react-native-firebase/auth';
-import auth from '@react-native-firebase/app'
+import { Fonts } from "../../../asset/fonts/Font";
+// import { GoogleSignin } from '@react-native-google-signin/google-signin';
+// import auth from '@react-native-firebase/app'
 
 const CreateProfile = ({ navigation }) => {
-    GoogleSignin.configure({
-        webClientId: '962014968820-o2ujldv44r4a22sivip70bjsv6f2i772.apps.googleusercontent.com',
-      })
+    // GoogleSignin.configure({
+    //     webClientId: '962014968820-o2ujldv44r4a22sivip70bjsv6f2i772.apps.googleusercontent.com',
+    //   })
     
-      
       const onGoogleButtonPress = async () => {
         try {
             await GoogleSignin.hasPlayServices();
@@ -32,8 +30,6 @@ const CreateProfile = ({ navigation }) => {
             Alert.alert("Login Error", error.message);
             }
             }
-            
-            
       };
       
     return (
@@ -42,15 +38,16 @@ const CreateProfile = ({ navigation }) => {
                 <StatusBar translucent backgroundColor={'transparent'} barStyle={"dark-content"} />
                 <TextComponent 
                     size={20} 
-                    weight={"300"} 
+                    font={Fonts.SF_Regular1}
                     color={Colors.Darkgrey} 
-                    styles_font={{ marginLeft: 20, marginTop: 40 }} 
+                    left={20}
+                    styles_font={{ marginTop: 40 }} 
                 >Create Profile</TextComponent>
                 <Imagepicker />
                 <View style={styles.border}>
                     <TextComponent 
                         size={16} 
-                        weight={"600"} 
+                        font={Fonts.SF_Medium1}
                         color={Colors.Darkgrey} 
                         styles_font={{ alignSelf: "center" ,marginBottom:20}} 
                     >Add photo</TextComponent>
@@ -58,9 +55,9 @@ const CreateProfile = ({ navigation }) => {
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
-                        width={210} 
+                        // width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >First name</TextComponent>
                     <TextInput 
@@ -73,9 +70,9 @@ const CreateProfile = ({ navigation }) => {
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
-                        width={210} 
+                        // width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >Last name</TextComponent>
                     <TextInput 
@@ -88,9 +85,8 @@ const CreateProfile = ({ navigation }) => {
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
-                        width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >Mobile phone</TextComponent>
                     <TextInput 
@@ -103,9 +99,8 @@ const CreateProfile = ({ navigation }) => {
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
-                        width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >Email</TextComponent>
                     <TextInput 
@@ -113,18 +108,17 @@ const CreateProfile = ({ navigation }) => {
                         placeholderTextColor={Colors.Green} 
                         style={styles.input} 
                     />
-                    <Button
+                    {/* <Button
       title="Google Sign-In"
       onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}
-    />
+    /> */}
 
                 </View>
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
-                        width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >Gender</TextComponent>
                     <TextInput 
@@ -136,9 +130,8 @@ const CreateProfile = ({ navigation }) => {
                 <View style={[styles.border, styles.view]}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
-                        width={210} 
                         styles_font={{ marginTop: 8 }} 
                     >Date of birth</TextComponent>
                     <TextInput 
@@ -151,7 +144,7 @@ const CreateProfile = ({ navigation }) => {
                 <View style={ { paddingVertical: 10 ,width: "90%",alignSelf:"center"}}>
                     <TextComponent 
                         size={15} 
-                        weight={"400"} 
+                        font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
                         styles_font={{ marginBottom: 20 }} 
                     >Bio</TextComponent>
@@ -162,7 +155,7 @@ const CreateProfile = ({ navigation }) => {
                         multiline
                     />
                 </View>
-                <TouchableOpacity style={{ marginTop: 40 }} onPress={() => { navigation.navigate('Profile2') }}> 
+                <TouchableOpacity style={{ marginTop: 40 }} onPress={() => { navigation.navigate('UpdateProfile') }}> 
                     <NextButton title={'NEXT'} />
                 </TouchableOpacity>
             </View>
@@ -180,7 +173,8 @@ const styles = StyleSheet.create({
     input: {
         fontSize: 14,
         color: Colors.Darkgrey,
-        height: 35
+        height: 35,
+        textAlign:"right"
     },
     bio: {
         borderWidth: 1.5,

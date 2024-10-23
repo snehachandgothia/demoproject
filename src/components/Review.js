@@ -36,7 +36,7 @@ const Review=()=>{
         <View style={styles.view}>
            <TouchableOpacity style={{flexDirection:"row"}} onPress={toggle}>
             <TextComponent 
-            size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginLeft:10}}>Review</TextComponent>
+            size={14} weight={"400"} color={Colors.Darkgrey} left={10}>Review</TextComponent>
             <Image style={styles.image}
             source={checked?(require('../../asset/images/dropdown.png')):(require('../../asset/images/rightarrow.png'))}/>
            </TouchableOpacity>

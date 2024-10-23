@@ -7,6 +7,7 @@ import { windowWidth } from "../constants/Dimensions";
 import TextComponent from "../components/TextComponent";
 import { Colors } from "../constants/Colors";
 import { Data } from "../constants/ConstantData";
+import { Fonts } from "../../asset/fonts/Font";
 
 const { width } = Dimensions.get('window');
 const OnBoarding = ({ navigation }) => {
@@ -26,13 +27,11 @@ const OnBoarding = ({ navigation }) => {
         <View >
             <Image style={styles.image} source={item.image} />
             <TextComponent
-                size={30} weight={"400"} color={Colors.Darkgrey} styles_font={{
-                    alignSelf: "center",
-                    marginTop: 30
+                size={30} font={Fonts.SF_Regular1} color={Colors.Darkgrey}  styles_font={{alignSelf: "center",marginTop: 30
                 }}>{item.title}</TextComponent>
             <View style={{ width: windowWidth }}>
                 <TextComponent
-                    size={14} weight={"400"} color={Colors.Grey} styles_font={{
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Grey} textAlign={"center"} styles_font={{
                         alignSelf: "center",
                         textAlign: "center", marginTop: 20,
                     }} width={280}>{item.text}</TextComponent>
@@ -71,9 +70,9 @@ const OnBoarding = ({ navigation }) => {
                     ))}
                 </View>
                 <View style={styles.button} >
-                    <TouchableOpacity onPress={currentIndex === Data.length ? navigation.navigate('SignUp') : handleNextPress}>
-                        <TextComponent size={16} weight={"400"} color={Colors.Blue}>
-                            {currentIndex === Data.length - 1 ? "Start" : "Skip"}</TextComponent>
+                    <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+                        <TextComponent size={16} font={Fonts.SF_Regular1} color={Colors.Blue}>
+                            {currentIndex === Data.length - 1 ? "Start!" : "Skip"}</TextComponent>
                     </TouchableOpacity>
                 </View>
             </View>

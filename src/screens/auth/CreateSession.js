@@ -14,14 +14,14 @@ const CreateSession = ({ navigation }) => {
     return (
             <ScrollView style={{backgroundColor:Colors.White}}>
                 <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
-                <Header onPress={() => { navigation.navigate('Profile2') }} title={'Create Session'} />
-                <View style={[styles.select, styles.border]}>
+                <Header onPress={() => { navigation.navigate('UpdateProfile') }} title={'Create Session'} />
+                <View style={[styles.select, styles.border,{paddingVertical:20}]}>
                     <TextComponent 
                         size={18} 
                         weight={"500"} 
                         color={Colors.Darkgrey} 
-                        width={130}
-                        styles_font={{marginVertical: 30}} 
+                        width={150}
+                        alignSelf={"center"}
                     >Age</TextComponent>
                     <View style={styles.container}>
                         <Select 
@@ -38,8 +38,8 @@ const CreateSession = ({ navigation }) => {
                     size={18} 
                     weight={"600"} 
                     color={Colors.Darkgrey} 
+                    left={20}
                     styles_font={{marginVertical: 10,
-                        marginLeft: 20,
                         paddingTop: 10}} 
                 >Gender Preferences</TextComponent>
                 <View style={[styles.select, styles.border, { paddingBottom: 10 }]}>
@@ -49,19 +49,21 @@ const CreateSession = ({ navigation }) => {
                     size={18} 
                     weight={"600"} 
                     color={Colors.Darkgrey} 
+                    left={20}
                     styles_font={{marginVertical: 10,
-                        marginLeft: 20,
                         paddingTop: 10}} 
                 >Choose Location</TextComponent>
                 <View style={[styles.select, styles.border]}>
-                    <LocationCheckBox onPress={() => navigation.navigate("TrainerLocation")} />
+                    <LocationCheckBox onPressTrainer={() => navigation.navigate("TrainerLocation")}
+                    onPressTrainee={() => navigation.navigate("TrainerLocation")} />
                 </View>
-                <View style={styles.select}>
+                <View style={[styles.select,{marginVertical:20}]}>
                     <TextComponent 
                         size={18} 
+                        width={150}
                         weight={"500"} 
                         color={Colors.Darkgrey} 
-                        styles_font={{marginVertical: 30}} 
+                        styles_font={{marginVertical: 10}} 
                     >Session Duration</TextComponent>
                     <View style={styles.container}>
                         <Select 
@@ -78,10 +80,11 @@ const CreateSession = ({ navigation }) => {
                     <TextComponent 
                         size={18} 
                         weight={"500"} 
+                        width={150}
                         color={Colors.Darkgrey} 
-                        styles_font={{marginVertical: 30}} 
+                        styles_font={{marginVertical: 15}} 
                     >Price for package</TextComponent>
-                    <TextInput style={styles.input} placeholder="from 10 AED" />
+                    <TextInput style={[styles.container,{paddingLeft:20}]} placeholder="from 10 AED" />
                 </View>
                 <TouchableOpacity style={{ marginTop: 60 }}>
                     <NextButton title={'CREATE'} />
@@ -94,7 +97,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        marginLeft: 30
+        marginLeft: 30,
+        borderWidth:1,
+        borderColor:Colors.Bordergrey,
+        borderRadius:10,
     },
     select: {
         flexDirection: "row",

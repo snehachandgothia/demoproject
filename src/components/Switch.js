@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: Colors.White,
   },
+  view:{
+    flexDirection:"row",
+    justifyContent:"space-between"
+  }
 });
 
 const Switchcustom = () => {
@@ -82,18 +86,19 @@ const Switchcustom = () => {
 
   return (
     <View >
-<View style={{flexDirection:"row"}}>
+<View style={styles.view}>
     <TextComponent
-    size={14} weight={"400"} color={Colors.Darkgrey} width={285} styles_font={{marginTop:15,}}>Female</TextComponent>
+    size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Female</TextComponent>
       <CustomSwitch isEnabled={isEnabled} toggleSwitch={toggleSwitch1} />
 </View>
-<View style={{flexDirection:"row"}}>
+<View style={styles.view}>
   <TextComponent
-    size={14} weight={"400"} color={Colors.Darkgrey} width={285} styles_font={{marginTop:15,}}>Male</TextComponent>
+    size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Male</TextComponent>
 <CustomSwitch isEnabled={enable} toggleSwitch={toggleswitch2}/>
 </View>
     </View>
   );
 };
+
 
 export default Switchcustom;

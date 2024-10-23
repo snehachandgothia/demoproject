@@ -36,10 +36,10 @@ const TrainerLocation = ({navigation }) => {
                 placeholderTextColor={Colors.Grey}
                 style={styles.input} />
             <TouchableOpacity style={styles.choose}
-                onPress={()=>navigation.navigate('Location2')}
+                onPress={()=>navigation.navigate('TrainerAddress')}
                 >
                 <TextComponent
-                size={20} weight={"400"} color={Colors.Darkgrey}>Manually Enter the Address</TextComponent>
+                size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Manually Enter the Address</TextComponent>
                 <Image style={styles.image} source={ImageConstant.RightArrow} />
             </TouchableOpacity>
             <TouchableOpacity style={{ marginTop: 150 }}>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         width: "90%",
         alignSelf: "center",
         backgroundColor: Colors.Greywhite,
-        borderRadius: 20,
+        borderRadius: 10,
         paddingLeft: 20,
         fontSize: 14,
         fontWeight: "400",

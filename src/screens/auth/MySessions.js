@@ -4,24 +4,25 @@ import Header from "../../components/Header";
 import { ScrollView } from "react-native-gesture-handler";
 import TextComponent from "../../components/TextComponent";
 import { Colors } from "../../constants/Colors";
+import { Fonts } from "../../../asset/fonts/Font";
 
 const MySessions = () => {
     const [selectedTab, setSelectedTab] = useState('All');
 
     const Data = [
-        { id: 1, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 2, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 3, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 4, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 5, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') }
+        { id: 1, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 2, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 3, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 4, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 5, title: "Basketball", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') }
     ];
 
     const Purchased = [
-        { id: 1, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 2, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 3, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 4, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
-        { id: 5, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') }
+        { id: 1, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 2, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 3, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 4, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') },
+        { id: 5, title: "Football", image: require('../../../asset/images/gallerypic.png'), text: "Dribbling | Duration : 30min", place: "Trainer Place", price: "1200 AED", edit: require('../../../asset/images/edit.png'), delete: require('../../../asset/images/delete.png') }
     ];
 
     return (
@@ -35,7 +36,7 @@ const MySessions = () => {
                     >
                         <TextComponent 
                             size={16} 
-                            weight="400" 
+                            font={Fonts.SF_Regular1} 
                             color={selectedTab === "All" ? Colors.Blue : Colors.Darkgrey} 
                         >All</TextComponent>
                     </TouchableOpacity>
@@ -45,7 +46,7 @@ const MySessions = () => {
                     >
                         <TextComponent 
                             size={16} 
-                            weight="400" 
+                            font={Fonts.SF_Regular1} 
                             color={selectedTab === "Purchased" ? Colors.Blue : Colors.Darkgrey} 
                         >Purchased</TextComponent>
                     </TouchableOpacity>
@@ -60,9 +61,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} weight="700" color={Colors.Black} >{item.title}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.text}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.place} </TextComponent>
+                                            <TextComponent size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</TextComponent>
+                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</TextComponent>
+                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place} </TextComponent>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -71,7 +72,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} weight="700" color={Colors.Black} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
+                                    <TextComponent size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</TextComponent>
                                 </View>
                             )}
                         />
@@ -84,9 +85,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} weight="700" color={Colors.Black} >{item.title}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.text}</TextComponent>
-                                            <TextComponent size={13} weight="400" color={Colors.Darkgrey} >{item.place}</TextComponent>
+                                            <TextComponent size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</TextComponent>
+                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</TextComponent>
+                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place}</TextComponent>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -95,7 +96,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} weight="700" color={Colors.Black} styles_font={{ marginLeft: 88 }} >{item.price}</TextComponent>
+                                    <TextComponent size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</TextComponent>
                                 </View>
                             )}
                         />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, TouchableOpacity, TextInput, Image } from "react-native";
 import { CountryPicker } from "react-native-country-codes-picker";
 import { Fonts } from "../../asset/fonts/Font";
@@ -7,15 +7,21 @@ import TextComponent from "./TextComponent";
 import { Colors } from "../constants/Colors";
 
 const InputComponent = () => {
+   useEffect(() => {
+      setCountryName('India');
+      setCountryCode('+91');
+      setSelectedCountry('🇮🇳');
+   }, []);
+
   const [isVisible, setIsVisible] = useState(false);
   const [countryName, setCountryName] = useState('');
   const [countryCode, setCountryCode] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   const handleCountrySelect = (country) => {
     setCountryName(country.name.en);
     setCountryCode(country.dial_code);
-    setSelectedCountry(country.flag)
+    setSelectedCountry(country.flag);
     setIsVisible(false);
   };
 
@@ -58,9 +64,8 @@ const InputComponent = () => {
 const styles = StyleSheet.create({
   input: {
     height: 48,
-    width: "93%",
+    width: "93.5%",
     backgroundColor: Colors.Greywhite,
-    // alignSelf: "center",
     paddingLeft: 20,
     paddingTop: 12,
     fontSize: 14,

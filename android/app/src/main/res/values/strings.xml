@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Beswol</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">"AIzaSyBUipTTaU_FXHn7Jw9PNGq6antgIdbiw4Y"
-
-</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">"AIzaSyBUipTTaU_FXHn7Jw9PNGq6antgIdbiw4Y"</string>
+    <string name="facebook_app_id">1093276758835402</string>
+    <string name="facebook_client_token">9adf042ac1d0395939f9ebaf536b413</string>
 
 </resources>

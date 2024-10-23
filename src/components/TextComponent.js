@@ -2,17 +2,18 @@ import React from "react";
 import {Text} from "react-native";
 import { Fonts } from "../../asset/fonts/Font";
 
-const TextComponent=({title,size,weight,color,styles_font,fontFamily=Fonts.SF_Regular1,textAlign,left,mhorizontal,children,width,...props})=>{
+const TextComponent=({title,size,weight,color,styles_font,font,textAlign,left,mhorizontal,children,width,...props})=>{
     return(
         <Text style={[styles_font,
         {fontSize:size,
         fontWeight:weight,
-        fontFamily:Fonts.SF_Regular1,
+        fontFamily:font,
         color:color,
         width:width,
         textAlign:textAlign,
         marginLeft:left,
-        marginHorizontal:mhorizontal
+        marginHorizontal:mhorizontal,
+        // marginRight:right,
         }]}
         {...props}>{children}{title}</Text>
     )
