@@ -26,5 +26,6 @@ export const Colors = {
     Forumtextgrey:"#535353",
     Switchgreen:"#00D856",
     LGdarkblue:"#13359B",
-    LGskyblue:"#2251D84D"
+    LGskyblue:"#2251D84D",
+    Greyicon:"#666666"
 };

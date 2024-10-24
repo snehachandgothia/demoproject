@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { StatusBar, StyleSheet, TextInput, TouchableOpacity, View ,Button, Alert} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import NextButton from "../../components/NextButton";
+import MainButton from "../../components/MainButton";
 import Imagepicker from "../../components/ImagePicker";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 // import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -36,30 +36,30 @@ const CreateProfile = ({ navigation }) => {
         <ScrollView>
             <View>
                 <StatusBar translucent backgroundColor={'transparent'} barStyle={"dark-content"} />
-                <TextComponent 
+                <Typography 
                     size={20} 
                     font={Fonts.SF_Regular1}
                     color={Colors.Darkgrey} 
                     left={20}
                     styles_font={{ marginTop: 40 }} 
-                >Create Profile</TextComponent>
+                >Create Profile</Typography>
                 <Imagepicker />
                 <View style={styles.border}>
-                    <TextComponent 
+                    <Typography 
                         size={16} 
                         font={Fonts.SF_Medium1}
                         color={Colors.Darkgrey} 
                         styles_font={{ alignSelf: "center" ,marginBottom:20}} 
-                    >Add photo</TextComponent>
+                    >Add photo</Typography>
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
                         // width={210} 
                         styles_font={{ marginTop: 8 }} 
-                    >First name</TextComponent>
+                    >First name</Typography>
                     <TextInput 
                         style={styles.input} 
                         placeholder="Write your first name"
@@ -68,13 +68,13 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
                         // width={210} 
                         styles_font={{ marginTop: 8 }} 
-                    >Last name</TextComponent>
+                    >Last name</Typography>
                     <TextInput 
                         style={styles.input} 
                         placeholder="Write your last name"
@@ -83,12 +83,12 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
                         styles_font={{ marginTop: 8 }} 
-                    >Mobile phone</TextComponent>
+                    >Mobile phone</Typography>
                     <TextInput 
                         style={styles.input} 
                         placeholder="+9 XXXX XXX XX XX"
@@ -97,12 +97,12 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
                         styles_font={{ marginTop: 8 }} 
-                    >Email</TextComponent>
+                    >Email</Typography>
                     <TextInput 
                         placeholder="Verify Email" 
                         placeholderTextColor={Colors.Green} 
@@ -115,12 +115,12 @@ const CreateProfile = ({ navigation }) => {
 
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1} 
                         color={Colors.Grey} 
                         styles_font={{ marginTop: 8 }} 
-                    >Gender</TextComponent>
+                    >Gender</Typography>
                     <TextInput 
                         placeholder="Female/Male" 
                         placeholderTextColor={Colors.Placeholdergrey} 
@@ -128,12 +128,12 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <View style={[styles.border, styles.view]}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
                         styles_font={{ marginTop: 8 }} 
-                    >Date of birth</TextComponent>
+                    >Date of birth</Typography>
                     <TextInput 
                         style={styles.input} 
                         placeholder="10.03.1980"
@@ -142,12 +142,12 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <View style={ { paddingVertical: 10 ,width: "90%",alignSelf:"center"}}>
-                    <TextComponent 
+                    <Typography 
                         size={15} 
                         font={Fonts.SF_Regular1}
                         color={Colors.Grey} 
                         styles_font={{ marginBottom: 20 }} 
-                    >Bio</TextComponent>
+                    >Bio</Typography>
                     <TextInput 
                         style={styles.bio}
                         placeholder="Let user to know more about you"
@@ -156,7 +156,7 @@ const CreateProfile = ({ navigation }) => {
                     />
                 </View>
                 <TouchableOpacity style={{ marginTop: 40 }} onPress={() => { navigation.navigate('UpdateProfile') }}> 
-                    <NextButton title={'NEXT'} />
+                    <MainButton title={'NEXT'} />
                 </TouchableOpacity>
             </View>
         </ScrollView>

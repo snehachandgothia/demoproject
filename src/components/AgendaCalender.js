@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Text, View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { Fonts } from "../../asset/fonts/Font";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
-import { ConstantData } from "../constants/ConstantData";
 import { Week_of_month,MonthName } from "../constants/ConstantData";
-
+// moment library for dates days
 
 const AgendaCalender = () => {
     // const Week_of_month = [
@@ -52,7 +51,6 @@ const AgendaCalender = () => {
         const tempDate = new Date(year, currentMonth, dayOfMonth);
         return Week_of_month[tempDate.getDay()].day;
     };
-
     const handleSelect = (dayOfMonth) => {
         setCurrentDayOfMonth(dayOfMonth);
         setCurrentWeekDayName(getDayOfWeek(dayOfMonth));
@@ -76,17 +74,17 @@ const AgendaCalender = () => {
                                         start={{ x: 0.2, y: 0 }}
                                         end={{ x: 1, y: 1.5 }}
                                         >
-                                        <TextComponent size={20} color={Colors.White} styles_font={{alignSelf: "center"}} weight={"700"}
-                                        >{item}</TextComponent>
-                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
-                                        >{getDayOfWeek(item)}</TextComponent>
+                                        <Typography size={20} color={Colors.White} styles_font={{alignSelf: "center"}} font={Fonts.SF_Bold1}
+                                        >{item}</Typography>
+                                        <Typography styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
+                                        >{getDayOfWeek(item)}</Typography>
                                     </LinearGradient>
                                 ) : (
                                     <View>
-                                        <TextComponent size={20} color={Colors.White} styles_font={{alignSelf: "center"}} weight={"700"}
-                                        >{item}</TextComponent>                 
-                                        <TextComponent styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
-                                        >{getDayOfWeek(item)}</TextComponent>                                   
+                                        <Typography size={20} color={Colors.White} styles_font={{alignSelf: "center"}} font={Fonts.SF_Bold1}
+                                        >{item}</Typography>                 
+                                        <Typography styles_font={{alignSelf:"center"}} size={14} color={Colors.White}
+                                        >{getDayOfWeek(item)}</Typography>                                   
                                         </View>
                                 )}
                             </TouchableOpacity>
@@ -95,32 +93,32 @@ const AgendaCalender = () => {
                 </LinearGradient>
                 <View style={styles.view}>
                     <View style={styles.dateInfo}>
-                        <TextComponent size={38} weight={"700"} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
-                        >{currentDayOfMonth}</TextComponent>
-                        <TextComponent size={26} weight={"700"} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
-                        >{MonthName[currentMonth]?.title}</TextComponent>
-                        <TextComponent size={13} weight={"400"} color={Colors.Grey} styles_font={{alignSelf:"center"}}
-                        >{currentWeekDayName}</TextComponent>
+                        <Typography size={38} font={Fonts.SF_Bold1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
+                        >{currentDayOfMonth}</Typography>
+                        <Typography size={26} font={Fonts.SF_Bold1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}
+                        >{MonthName[currentMonth]?.title}</Typography>
+                        <Typography size={13} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{alignSelf:"center"}}
+                        >{currentWeekDayName}</Typography>
                     </View>
                     <View style={styles.trainingInfo}>
-                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
-                        >Scheduled Trainings </TextComponent>
-                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
-                        >Resheduling Requests </TextComponent>                        
-                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
-                        >Completed Trainings </TextComponent>                        
-                        <TextComponent size={17} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15}}
-                        >Canceled Trainings </TextComponent>              
+                        <Typography size={17} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15}}
+                        >Scheduled Trainings </Typography>
+                        <Typography size={17} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15}}
+                        >Resheduling Requests </Typography>                        
+                        <Typography size={17} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15}}
+                        >Completed Trainings </Typography>                        
+                        <Typography size={17} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15}}
+                        >Canceled Trainings </Typography>              
                     </View>
                     <View>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightblue}
-                        ]}width={70} size={14} weight={"400"} color={Colors.Blue}>5</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightorange}
-                        ]} width={70} size={14} weight={"400"} color={Colors.Orange}>1</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightgreen}
-                        ]} width={70} size={14} weight={"400"} color={Colors.Switchgreen}>50</TextComponent>
-                        <TextComponent styles_font={[styles.number,{backgroundColor: Colors.Lightpink}]} width={70}
-                         size={14} weight={"400"} color={Colors.Red}>0</TextComponent>
+                        <Typography styles_font={[styles.number,{backgroundColor: Colors.Lightblue}
+                        ]}width={70} size={14} font={Fonts.SF_Regular1} textAlign={"center"} color={Colors.Blue}>5</Typography>
+                        <Typography styles_font={[styles.number,{backgroundColor: Colors.Lightorange}
+                        ]} width={70} size={14} font={Fonts.SF_Regular1} textAlign={"center"} color={Colors.Orange}>1</Typography>
+                        <Typography styles_font={[styles.number,{backgroundColor: Colors.Lightgreen}
+                        ]} width={70} size={14} font={Fonts.SF_Regular1} textAlign={"center"} color={Colors.Switchgreen}>50</Typography>
+                        <Typography styles_font={[styles.number,{backgroundColor: Colors.Lightpink}
+                        ]} width={70}size={14} font={Fonts.SF_Regular1} textAlign={"center"} color={Colors.Red}>0</Typography>
                     </View>
                 </View>
             </View>
@@ -172,7 +170,6 @@ const AgendaCalender = () => {
         number: {
             height: 30,
             marginTop: 10,
-            textAlign: "center",
             paddingVertical: 5,
             fontFamily: Fonts.SF_Regular1,
             borderRadius: 50

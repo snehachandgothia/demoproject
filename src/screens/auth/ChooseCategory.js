@@ -2,8 +2,8 @@ import React from "react";
 import { StatusBar, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import Header from "../../components/Header";
 import { Fonts } from "../../../asset/fonts/Font";
-import CategoryDD from "../../components/CategoryDD";
-import NextButton from "../../components/NextButton";
+import CategoryDropdown from "../../components/CategoryDropdown";
+import MainButton from "../../components/MainButton";
 import { Colors } from "../../constants/Colors";
 
 const ChooseCategory = () => {
@@ -14,7 +14,7 @@ const ChooseCategory = () => {
             <TextInput placeholder="Enter trainer name or sport"
                 placeholderTextColor={Colors.Grey}
                 style={styles.input} />
-                <CategoryDD placeholder={'Football'}
+                <CategoryDropdown placeholder={'Football'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
@@ -22,35 +22,35 @@ const ChooseCategory = () => {
                         { label: 'Befeure', value: '4' },
                     ]}
                     style_dd={{ color: Colors.Darkgrey, fontSize: 14, fontWeight: "700", fontFamily: Fonts.SF_Regular1, }} />
-                <CategoryDD placeholder={'Compact Sports'}
+                <CategoryDropdown placeholder={'Compact Sports'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
                         { label: 'Passing', value: '3' },
                         { label: 'Befeure', value: '4' },
                     ]} />
-                <CategoryDD placeholder={'Cycling'}
+                <CategoryDropdown placeholder={'Cycling'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
                         { label: 'Passing', value: '3' },
                         { label: 'Befeure', value: '4' },
                     ]} />
-                <CategoryDD placeholder={'Exercise Biking'}
+                <CategoryDropdown placeholder={'Exercise Biking'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
                         { label: 'Passing', value: '3' },
                         { label: 'Befeure', value: '4' },
                     ]} />
-                <CategoryDD placeholder={'MMA/UFC'}
+                <CategoryDropdown placeholder={'MMA/UFC'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
                         { label: 'Passing', value: '3' },
                         { label: 'Befeure', value: '4' },
                     ]} />
-                <CategoryDD placeholder={'Cricket'}
+                <CategoryDropdown placeholder={'Cricket'}
                     name={[
                         { label: 'Dribbing', value: '1' },
                         { label: 'Shooting', value: '2' },
@@ -58,7 +58,7 @@ const ChooseCategory = () => {
                         { label: 'Befeure', value: '4' },
                     ]} />
 <TouchableOpacity style={{marginTop:150}}>
-<NextButton title={'NEXT'}/>
+<MainButton title={'NEXT'}/>
 </TouchableOpacity>
         </View>
     )

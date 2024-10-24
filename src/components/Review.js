@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, TouchableOpacity, View ,FlatList} from "react-native";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
+import { Fonts } from "../../asset/fonts/Font";
 
 const Review=()=>{
     const[checked,setChecked]=useState(false);
@@ -23,20 +24,20 @@ const Review=()=>{
             source={item.image}/>
             <View style={{marginTop:8,marginLeft:10}}>
             <Image source={item.star}/>
-            <TextComponent
-            size={14} weight={"400"} color={Colors.Darkgrey}>{item.title}</TextComponent>
+            <Typography
+            size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>{item.title}</Typography>
             </View>
             </View>
-            <TextComponent
-            size={14} weight={"400"} color={Colors.Grey} width={270} styles_font={{marginTop:5}}>{item.text}</TextComponent>
+            <Typography
+            size={14} font={Fonts.SF_Regular1} color={Colors.Grey} width={270} styles_font={{marginTop:5}}>{item.text}</Typography>
         </View>
     )
 
     return(
         <View style={styles.view}>
            <TouchableOpacity style={{flexDirection:"row"}} onPress={toggle}>
-            <TextComponent 
-            size={14} weight={"400"} color={Colors.Darkgrey} left={10}>Review</TextComponent>
+            <Typography 
+            size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} left={10}>Review</Typography>
             <Image style={styles.image}
             source={checked?(require('../../asset/images/dropdown.png')):(require('../../asset/images/rightarrow.png'))}/>
            </TouchableOpacity>

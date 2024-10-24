@@ -2,8 +2,9 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageConstant } from "../constants/ImageConstant";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
+import { Fonts } from "../../asset/fonts/Font";
 
 const MyPackage=()=>{
     const Data=[
@@ -17,23 +18,23 @@ const MyPackage=()=>{
            <ImageBackground style={styles.view}
            source={ImageConstant.Gallerypic}>
            <View style={{flexDirection:"row"}}>
-           <TextComponent
-           size={16} weight={"600"} color={Colors.White}>{item.title}</TextComponent>
+           <Typography
+           size={16} font={Fonts.SF_Medium1} color={Colors.White}>{item.title}</Typography>
            <TouchableOpacity>
            <Image style={styles.cancel}
            source={ImageConstant.Cut}/>
            </TouchableOpacity>
            </View>
-           <TextComponent 
-           size={14} weight={"400"} color={Colors.White}>{item.text}</TextComponent>
-           <TextComponent
-           size={14} weight={"400"} color={Colors.White}>{item.time}</TextComponent>
-           <TextComponent
-           size={14} weight={"400"} color={Colors.White}>{item.location}</TextComponent>
-           <TextComponent
-           size={22} weight={"700"} color={Colors.White} styles_font={{marginTop:10}}>{item.price}</TextComponent>
-           <TextComponent 
-           size={14} weight={"400"} color={Colors.White}>{item.average}</TextComponent>
+           <Typography 
+           size={14} font={Fonts.SF_Regular1} color={Colors.White}>{item.text}</Typography>
+           <Typography
+           size={14} font={Fonts.SF_Regular1} color={Colors.White}>{item.time}</Typography>
+           <Typography
+           size={14} font={Fonts.SF_Regular1} color={Colors.White}>{item.location}</Typography>
+           <Typography
+           size={22} font={Fonts.SF_Bold1} color={Colors.White} styles_font={{marginTop:10}}>{item.price}</Typography>
+           <Typography 
+           size={14} font={Fonts.SF_Regular1} color={Colors.White}>{item.average}</Typography>
            </ImageBackground>
     )
     return(

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StatusBar, StyleSheet, TouchableOpacity, View, FlatList, Image } from "react-native";
 import Header from "../../components/Header";
 import { ScrollView } from "react-native-gesture-handler";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 
@@ -34,21 +34,21 @@ const MySessions = () => {
                         style={[styles.box, selectedTab === 'All' && styles.selectedBox]}
                         onPress={() => setSelectedTab('All')}
                     >
-                        <TextComponent 
+                        <Typography 
                             size={16} 
                             font={Fonts.SF_Regular1} 
                             color={selectedTab === "All" ? Colors.Blue : Colors.Darkgrey} 
-                        >All</TextComponent>
+                        >All</Typography>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={[styles.box, selectedTab === 'Purchased' && styles.selectedBox]}
                         onPress={() => setSelectedTab('Purchased')}
                     >
-                        <TextComponent 
+                        <Typography 
                             size={16} 
                             font={Fonts.SF_Regular1} 
                             color={selectedTab === "Purchased" ? Colors.Blue : Colors.Darkgrey} 
-                        >Purchased</TextComponent>
+                        >Purchased</Typography>
                     </TouchableOpacity>
                 </View>
                 <View>
@@ -61,9 +61,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</TextComponent>
-                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</TextComponent>
-                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place} </TextComponent>
+                                            <Typography size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</Typography>
+                                            <Typography size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</Typography>
+                                            <Typography size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place} </Typography>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -72,7 +72,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</TextComponent>
+                                    <Typography size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</Typography>
                                 </View>
                             )}
                         />
@@ -85,9 +85,9 @@ const MySessions = () => {
                                     <View style={{ flexDirection: "row" }}>
                                         <Image style={styles.image} source={item.image} />
                                         <View style={{marginTop:8}}>
-                                            <TextComponent size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</TextComponent>
-                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</TextComponent>
-                                            <TextComponent size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place}</TextComponent>
+                                            <Typography size={16} font={Fonts.SF_Bold1} color={Colors.Black} >{item.title}</Typography>
+                                            <Typography size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.text}</Typography>
+                                            <Typography size={13} font={Fonts.SF_Regular1} color={Colors.Darkgrey} >{item.place}</Typography>
                                         </View>
                                         <TouchableOpacity>
                                             <Image style={styles.edit} source={item.edit} />
@@ -96,7 +96,7 @@ const MySessions = () => {
                                             <Image style={styles.delete} source={item.delete} />
                                         </TouchableOpacity>
                                     </View>
-                                    <TextComponent size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</TextComponent>
+                                    <Typography size={18} font={Fonts.SF_Bold1} color={Colors.Black} left={88}>{item.price}</Typography>
                                 </View>
                             )}
                         />

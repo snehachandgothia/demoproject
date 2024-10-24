@@ -5,8 +5,8 @@ import Header from "../../components/Header";
 import MapView, { Marker } from "react-native-maps";
 import { TextInput } from "react-native-gesture-handler";
 import { Fonts } from "../../../asset/fonts/Font";
-import NextButton from "../../components/NextButton";
-import TextComponent from "../../components/TextComponent";
+import MainButton from "../../components/MainButton";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 
 const TrainerLocation = ({navigation }) => {
@@ -38,12 +38,12 @@ const TrainerLocation = ({navigation }) => {
             <TouchableOpacity style={styles.choose}
                 onPress={()=>navigation.navigate('TrainerAddress')}
                 >
-                <TextComponent
-                size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Manually Enter the Address</TextComponent>
+                <Typography
+                size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Manually Enter the Address</Typography>
                 <Image style={styles.image} source={ImageConstant.RightArrow} />
             </TouchableOpacity>
             <TouchableOpacity style={{ marginTop: 150 }}>
-                <NextButton title={'CONTINUE'} />
+                <MainButton title={'CONTINUE'} />
             </TouchableOpacity>
         </View>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet,TouchableOpacity, View } from "react-native";
 import { ImageConstant } from "../constants/ImageConstant";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
 import { Fonts } from "../../asset/fonts/Font";
 
@@ -12,8 +12,8 @@ const Header=({onPress,title})=>{
                 <Image style={styles.back}
                 source={ImageConstant.Back}/>
             </TouchableOpacity>
-            <TextComponent size={20} font={Fonts.SF_Regular1} left={10}
-            color={Colors.Darkgrey} >{title}</TextComponent>
+            <Typography size={20} font={Fonts.SF_Regular1} left={10}
+            color={Colors.Darkgrey} >{title}</Typography>
         </View>
     )
 };

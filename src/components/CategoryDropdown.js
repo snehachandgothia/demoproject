@@ -4,7 +4,7 @@ import { Dropdown } from 'react-native-element-dropdown';
 import { Fonts } from '../../asset/fonts/Font';
 import { Colors } from '../constants/Colors';
 
-const CategoryDD=({placeholder,name})=>{
+const CategoryDropdown=({placeholder,name})=>{
   const [selectedValue, setSelectedValue] = useState(null);
   // const data = [
   //   { label: '30 min', value: '1' },
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf:"center",
     width:"90%",
-    marginTop:20
+    // marginTop:20
   },
   dropdown: {
     height: 50,
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
     color:Colors.Darkgrey
   },
 });
-export default CategoryDD;
+export default CategoryDropdown;

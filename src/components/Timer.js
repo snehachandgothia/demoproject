@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { StyleSheet, Text, TouchableOpacity, View ,Image} from "react-native";
 import { Fonts } from "../../asset/fonts/Font";
 import { ImageConstant } from "../constants/ImageConstant";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
 
 const Timer = () => {
@@ -39,11 +39,11 @@ const Timer = () => {
 
   return (
          <View style={{flexDirection:"row",marginTop:30,marginLeft:25}}>
-                <TextComponent
-                size={16} weight={"400"} color={Colors.Black}>Didn’t Received the Code?</TextComponent>                
+                <Typography
+                size={16} font={Fonts.SF_Regular1} color={Colors.Black}>Didn’t Received the Code?</Typography>                
                 <TouchableOpacity onPress={handleResendOtp}>
-            <TextComponent
-            size={17} weight={"700"} color={Colors.Darkblue}>Resend</TextComponent>
+            <Typography
+            size={17} font={Fonts.SF_Bold1} color={Colors.Darkblue}>Resend</Typography>
         </TouchableOpacity>
                     <Image style={styles.image}
                     source={ImageConstant.Timer}/>

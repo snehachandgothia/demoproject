@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { ImageConstant } from "../constants/ImageConstant";
 import { Colors } from "../constants/Colors";
+import { Fonts } from "../../asset/fonts/Font";
 
 const RateClient = ({ title }) => {
     const [selectedStars, setSelectedStars] = useState(0);
@@ -16,7 +17,9 @@ const RateClient = ({ title }) => {
     };
 
     return (
-        <View style={{ flexDirection: "row", marginLeft: 15, marginTop: 15 }}>
+        <View style={{ flexDirection: "row", marginHorizontal: 15, marginTop: 15 ,justifyContent:"space-between"}}>
+            
+            <View style={{flexDirection:"row"}}>
             {[1, 2, 3, 4, 5].map((starIndex) => (
                 <TouchableOpacity
                     key={starIndex}
@@ -28,12 +31,12 @@ const RateClient = ({ title }) => {
                     />
                 </TouchableOpacity>
             ))}
-            <TextComponent
-                styles_font={{ marginLeft: 115 }}
+            </View>
+            <Typography
                 size={15}
-                weight={"700"}
+                font={Fonts.SF_Bold1}
                 color={Colors.Darkgrey}
-            >{title}</TextComponent>
+            >{title}</Typography>
         </View>
     );
 };

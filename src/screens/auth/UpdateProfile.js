@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Image, StatusBar, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ImageConstant } from "../../constants/ImageConstant";
-import NextButton from "../../components/NextButton";
-import TextComponent from "../../components/TextComponent";
+import MainButton from "../../components/MainButton";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 
@@ -17,24 +17,24 @@ const UpdateProfile = ({ navigation }) => {
         <View style={{backgroundColor:Colors.White}}>
             <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
             <View style={styles.header}>
-                <TextComponent size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Update Profile</TextComponent>
+                <Typography size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Update Profile</Typography>
                 <TouchableOpacity>
-                    <TextComponent size={16} font={Fonts.SF_Regular1} color={Colors.Black}>Skip</TextComponent>
+                    <Typography size={16} font={Fonts.SF_Regular1} color={Colors.Black}>Skip</Typography>
                 </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.choose}>
-                <TextComponent size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Select membership plan</TextComponent>
+                <Typography size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Select membership plan</Typography>
                 <Image style={styles.image} source={ImageConstant.RightArrow} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.choose}>
-                <TextComponent size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Select your availability</TextComponent>
+                <Typography size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>Select your availability</Typography>
                 <Image style={styles.image} source={ImageConstant.RightArrow} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate('Create Session') }}>
-                <TextComponent size={14} font={Fonts.SF_Medium1} color={Colors.Darkblue} styles_font={{alignSelf:"center"}}>CREATE SESSIONS</TextComponent>
+                <Typography size={14} font={Fonts.SF_Medium1} color={Colors.Darkblue} styles_font={{alignSelf:"center"}}>CREATE SESSIONS</Typography>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button2}>
-                <TextComponent  size={14} font={Fonts.SF_Medium1} color={Colors.Darkblue} styles_font={{alignSelf:"center"}}>ATTACH YOUR OFFICIAL CERTIFICATION</TextComponent>
+                <Typography  size={14} font={Fonts.SF_Medium1} color={Colors.Darkblue} styles_font={{alignSelf:"center"}}>ATTACH YOUR OFFICIAL CERTIFICATION</Typography>
             </TouchableOpacity>
             <View style={styles.checkboxContainer}>
                 <TouchableOpacity
@@ -42,10 +42,10 @@ const UpdateProfile = ({ navigation }) => {
                     onPress={toggleCheckbox}>
                     <Image source={ImageConstant.Icon} style={styles.boxImage} />
                 </TouchableOpacity>
-                <TextComponent size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>I Accept Terms & Condition and Privacy & Policy</TextComponent>
+                <Typography size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>I Accept Terms & Condition and Privacy & Policy</Typography>
             </View>
             <TouchableOpacity style={{ marginTop: "65%" }}>
-                <NextButton title={'NEXT'} />
+                <MainButton title={'NEXT'} />
             </TouchableOpacity>
         </View>
     );

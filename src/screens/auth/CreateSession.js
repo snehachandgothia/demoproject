@@ -1,13 +1,14 @@
 import React from "react";
 import { StatusBar, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import Select from "../../components/Select";
-import NextButton from "../../components/NextButton";
+import MainButton from "../../components/MainButton";
 import LocationCheckBox from "../../components/LocationcheckBox";
 import { ScrollView } from "react-native-gesture-handler";
 import CustomSwitch from "../../components/Switch";
 import Header from "../../components/Header";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
+import { Fonts } from "../../../asset/fonts/Font";
 
 const CreateSession = ({ navigation }) => {
 
@@ -16,13 +17,13 @@ const CreateSession = ({ navigation }) => {
                 <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"} />
                 <Header onPress={() => { navigation.navigate('UpdateProfile') }} title={'Create Session'} />
                 <View style={[styles.select, styles.border,{paddingVertical:20}]}>
-                    <TextComponent 
+                    <Typography 
                         size={18} 
-                        weight={"500"} 
+                        font={Fonts.SF_Medium1}
                         color={Colors.Darkgrey} 
                         width={150}
                         alignSelf={"center"}
-                    >Age</TextComponent>
+                    >Age</Typography>
                     <View style={styles.container}>
                         <Select 
                             placeholder={'0-05'}
@@ -34,37 +35,37 @@ const CreateSession = ({ navigation }) => {
                         />
                     </View>
                 </View>
-                <TextComponent 
+                <Typography 
                     size={18} 
-                    weight={"600"} 
+                    font={Fonts.SF_Medium1}
                     color={Colors.Darkgrey} 
                     left={20}
                     styles_font={{marginVertical: 10,
                         paddingTop: 10}} 
-                >Gender Preferences</TextComponent>
+                >Gender Preferences</Typography>
                 <View style={[styles.select, styles.border, { paddingBottom: 10 }]}>
                     <CustomSwitch />
                 </View>
-                <TextComponent 
+                <Typography 
                     size={18} 
-                    weight={"600"} 
+                    font={Fonts.SF_Medium1}
                     color={Colors.Darkgrey} 
                     left={20}
                     styles_font={{marginVertical: 10,
                         paddingTop: 10}} 
-                >Choose Location</TextComponent>
+                >Choose Location</Typography>
                 <View style={[styles.select, styles.border]}>
                     <LocationCheckBox onPressTrainer={() => navigation.navigate("TrainerLocation")}
                     onPressTrainee={() => navigation.navigate("TrainerLocation")} />
                 </View>
                 <View style={[styles.select,{marginVertical:20}]}>
-                    <TextComponent 
+                    <Typography 
                         size={18} 
                         width={150}
-                        weight={"500"} 
+                        font={Fonts.SF_Medium1} 
                         color={Colors.Darkgrey} 
                         styles_font={{marginVertical: 10}} 
-                    >Session Duration</TextComponent>
+                    >Session Duration</Typography>
                     <View style={styles.container}>
                         <Select 
                             placeholder={'30 min'}
@@ -77,17 +78,17 @@ const CreateSession = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={styles.select}>
-                    <TextComponent 
+                    <Typography 
                         size={18} 
-                        weight={"500"} 
+                        font={Fonts.SF_Medium1} 
                         width={150}
                         color={Colors.Darkgrey} 
                         styles_font={{marginVertical: 15}} 
-                    >Price for package</TextComponent>
+                    >Price for package</Typography>
                     <TextInput style={[styles.container,{paddingLeft:20}]} placeholder="from 10 AED" />
                 </View>
                 <TouchableOpacity style={{ marginTop: 60 }}>
-                    <NextButton title={'CREATE'} />
+                    <MainButton title={'CREATE'} />
                 </TouchableOpacity>
             </ScrollView>
     )

@@ -1,14 +1,14 @@
 import React from "react";
 import { StatusBar, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { ImageConstant } from "../../constants/ImageConstant";
-import NextButton from "../../components/NextButton";
+import MainButton from "../../components/MainButton";
 import { ScrollView } from "react-native-gesture-handler";
 import MultiImage from "../../components/MultiImage";
 import CustomSwitch from "../../components/Switch";
-import SessionComponent from "../../components/SessionComponent";
+import Session from "../../components/Session";
 import MyPackage from "../../components/MyPackage";
 import Review from "../../components/Review";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 
@@ -17,12 +17,12 @@ const TrainerProfile = ({navigation}) => {
         <View style={{ borderBlockColor: Colors.White }}>
             <ScrollView>
                 <StatusBar translucent backgroundColor={'transparent'} barStyle={'dark-content'} />
-                <TextComponent
+                <Typography
                 size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey} left={15} styles_font={{marginTop: 40,
-                    }}>Update Profile</TextComponent>
+                    }}>Update Profile</Typography>
                 <View style={{ flexDirection: "row", marginLeft: 15, marginTop: 5 }}>
-                    <TextComponent
-                    size={34} font={Fonts.SF_Medium1} color={Colors.Darkgrey} width={280}>Profile</TextComponent>
+                    <Typography
+                    size={34} font={Fonts.SF_Medium1} color={Colors.Darkgrey} width={280}>Profile</Typography>
                     <TouchableOpacity>
                         <Image style={styles.edit}
                             source={ImageConstant.Edit} />
@@ -36,91 +36,91 @@ const TrainerProfile = ({navigation}) => {
                     <Image source={ImageConstant.User} />
                     <View style={{ marginLeft: 20, marginTop: 7, width: 160 }}>
                         <View style={{ flexDirection: "row" }}>
-                            <TextComponent
-                            size={19} font={Fonts.SF_Medium1} color={Colors.Darkgrey}>Jone Doe</TextComponent>
+                            <Typography
+                            size={19} font={Fonts.SF_Medium1} color={Colors.Darkgrey}>Jone Doe</Typography>
                             <Image style={{ marginLeft: 10, marginTop: 7 }}
                                 source={ImageConstant.BlueTick} />
                         </View>
                         <Image style={{ marginTop: 3 }}
                             source={ImageConstant.Stars} />
-                        <TextComponent
-                        size={12} font={Fonts.SF_Regular1} color={Colors.Grey}>145 Reviews</TextComponent>
+                        <Typography
+                        size={12} font={Fonts.SF_Regular1} color={Colors.Grey}>145 Reviews</Typography>
                     </View>
                     <TouchableOpacity style={styles.plan}>
-                        <TextComponent title={"Bronze plan"}
+                        <Typography title={"Bronze plan"}
                         size={12} font={Fonts.SF_Regular1} color={Colors.White} styles_font={{alignSelf:"center",marginTop:2}}/>
                         
                     </TouchableOpacity>
                 </View>
                 <View style={styles.view}>
                     <View style={{ marginLeft: 25 }}>
-                        <TextComponent
-                        size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>320</TextComponent>
-                        <TextComponent
-                        size={16} font={Fonts.SF_Regular1} color={Colors.Grey}>Sessions</TextComponent>
+                        <Typography
+                        size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>320</Typography>
+                        <Typography
+                        size={16} font={Fonts.SF_Regular1} color={Colors.Grey}>Sessions</Typography>
                     </View>
                     <View style={{ marginLeft: 25 }}>
-                        <TextComponent
-                        size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>12</TextComponent>
-                        <TextComponent
-                        size={16} font={Fonts.SF_Regular1} color={Colors.Grey}>Clients</TextComponent>
+                        <Typography
+                        size={20} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>12</Typography>
+                        <Typography
+                        size={16} font={Fonts.SF_Regular1} color={Colors.Grey}>Clients</Typography>
                     </View>
                     <TouchableOpacity style={styles.progress}>
-                        <TextComponent
-                        size={14} font={Fonts.SF_Regular1} color={Colors.White} styles_font={{alignSelf:"center"}}>My progress</TextComponent>
+                        <Typography
+                        size={14} font={Fonts.SF_Regular1} color={Colors.White} styles_font={{alignSelf:"center"}}>My progress</Typography>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: "row", marginTop: 15, marginLeft: 15 }}>
                     <Image style={{ marginRight: 5 }}
                         source={ImageConstant.Trophy}/>
-                    <TextComponent
-                    size={12} font={Fonts.SF_Regular1} color={Colors.Grey}>ADVANCED</TextComponent>
+                    <Typography
+                    size={12} font={Fonts.SF_Regular1} color={Colors.Grey}>ADVANCED</Typography>
                 </View>
                 <TouchableOpacity style={{ marginTop: 15 }}>
-                    <NextButton title={'MY SCHEDULE'} />
+                    <MainButton title={'MY SCHEDULE'} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.box}>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Textgrey}>Notifications</TextComponent>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Textgrey}>Notifications</Typography>
                     <Image style={{ marginTop: 5, marginLeft: 260 }}
                         source={ImageConstant.RightArrow} />
                 </TouchableOpacity>
                 <View style={styles.details}>
-                    <TextComponent 
-                    size={14} color={Colors.Grey} styles_font={{alignSelf:"center"}} >Phone number</TextComponent>
-                    <TextComponent
+                    <Typography 
+                    size={14} color={Colors.Grey} styles_font={{alignSelf:"center"}} >Phone number</Typography>
+                    <Typography
                     size={14} color={Colors.Darkgrey}  textAlign={"right"}
-                    styles_font={{alignSelf:"center"}}>+923423444567</TextComponent>
+                    styles_font={{alignSelf:"center"}}>+923423444567</Typography>
                 </View>
                 <View style={styles.details}>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{alignSelf:"center"}} width={100}>Email</TextComponent>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}} textAlign={"right"}>anna@gmail.com</TextComponent>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{alignSelf:"center"}} width={100}>Email</Typography>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}} textAlign={"right"}>anna@gmail.com</Typography>
                 </View>
                 <View style={styles.details}>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{alignSelf:"center"}}>Date of birth</TextComponent>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>10.03.1980</TextComponent>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{alignSelf:"center"}}>Date of birth</Typography>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{alignSelf:"center"}}>10.03.1980</Typography>
                 </View>
-                <TextComponent
+                <Typography
                 size={16} font={Fonts.SF_Regular1} left={30} color={Colors.Darkgrey} styles_font={{marginTop: 15,
-                    }}>About me</TextComponent>
+                    }}>About me</Typography>
                 <View style={styles.line}>
-<TextComponent
+<Typography
 size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={12} styles_font={{
-    lineHeight: 20,}} width={310}>Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem. Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem  tincidunt, pellentesque pulvinar lorem</TextComponent>
+    lineHeight: 20,}} width={310}>Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem. Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem  tincidunt, pellentesque pulvinar lorem</Typography>
                 </View>
-                <TextComponent
+                <Typography
                 size={16} font={Fonts.SF_Medium1} color={Colors.Darkgrey} left={30} styles_font={{marginTop: 15,
-                    }}>Gallery</TextComponent>
+                    }}>Gallery</Typography>
                 <View style={styles.image}>
                     <MultiImage />
                 </View>
-                <TextComponent
+                <Typography
                 size={16} font={Fonts.SF_Medium1} color={Colors.Darkgrey} left={30} styles_font={{marginTop: 15,
-                    }}>Client gender preference</TextComponent>
+                    }}>Client gender preference</Typography>
                 <View style={styles.underline}>
                     <View style={styles.gender}>
                         <CustomSwitch />
@@ -128,11 +128,11 @@ size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={12} styles_font={{
                 </View>
                 <View style={styles.account}>
                     <View style={{ width: "75%",marginVertical: 10,paddingLeft:10 }}>
-                        <TextComponent
+                        <Typography
                         size={16} font={Fonts.SF_Medium1} color={Colors.Darkgrey} styles_font={{
-                            marginLeft: 30}}>Account Number</TextComponent>
-                        <TextComponent
-                        size={12} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{marginLeft:29}}>**** **** ****</TextComponent>
+                            marginLeft: 30}}>Account Number</Typography>
+                        <Typography
+                        size={12} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{marginLeft:29}}>**** **** ****</Typography>
                     </View>
                     <TouchableOpacity>
                         <Image style={styles.change}
@@ -145,35 +145,35 @@ size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={12} styles_font={{
                 </View>
                 <TouchableOpacity
                     style={styles.account}>
-                    <TextComponent
+                    <Typography
                     size={18} font={Fonts.SF_Regular1} color={Colors.Grey} styles_font={{padding: 15,
-                        }}>Promo codes</TextComponent>
+                        }}>Promo codes</Typography>
                     <Image style={{ marginTop: 18, marginLeft: 170 }}
                         source={ImageConstant.Addcode} />
                 </TouchableOpacity>
                 <View style={styles.session}>
-                    <TextComponent
-                    size={16} font={Fonts.SF_Regular1} color={Colors.Textgrey} styles_font={{marginLeft:15}}>My Session</TextComponent>
+                    <Typography
+                    size={16} font={Fonts.SF_Regular1} color={Colors.Textgrey} styles_font={{marginLeft:15}}>My Session</Typography>
                     <TouchableOpacity>
                         <Image style={{ marginLeft: 5, marginTop: 1 }}
                             source={ImageConstant.Addcode} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={()=>NavigationContainer.navigate('MySessions')}>
-                        <TextComponent
+                        <Typography
                         size={14} font={Fonts.SF_Regular1} color={Colors.Blue} left={190} styles_font={{
-                            marginTop: 2}}>View All</TextComponent>
+                            marginTop: 2}}>View All</Typography>
                     </TouchableOpacity>
                 </View>
                 <View>
-                  <SessionComponent/>
+                  <Session/>
                 </View>
                 <View style={styles.session}>
-                    <TextComponent
-                    size={14} font={Fonts.SF_Regular1} color={Colors.Textgrey}>MY PACKAGES</TextComponent>
+                    <Typography
+                    size={14} font={Fonts.SF_Regular1} color={Colors.Textgrey}>MY PACKAGES</Typography>
                     <TouchableOpacity>
-                        <TextComponent
+                        <Typography
                         size={14} font={Fonts.SF_Regular1} color={Colors.Blue} left={200} styles_font={{
-                            marginTop: 2}}>View All</TextComponent>
+                            marginTop: 2}}>View All</Typography>
                     </TouchableOpacity>
                 </View>
                 <View>
@@ -183,14 +183,14 @@ size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={12} styles_font={{
 <Review/>
 </View>
 <TouchableOpacity>
-<TextComponent
+<Typography
 size={14} font={Fonts.SF_Regular1} color={Colors.Blue} left={20} styles_font={{marginTop:10,
-    }}>Booking cancellation policy</TextComponent>
+    }}>Booking cancellation policy</Typography>
 </TouchableOpacity>
 <TouchableOpacity>
-    <TextComponent
+    <Typography
     size={14} font={Fonts.SF_Regular1} color={Colors.Red} left={20} styles_font={{marginTop:20,
-        marginBottom:30}}>Log out</TextComponent>
+        marginBottom:30}}>Log out</Typography>
 </TouchableOpacity>
             </ScrollView>
         </View>

@@ -3,10 +3,10 @@ import { StyleSheet, View, TouchableOpacity, TextInput, Image } from "react-nati
 import { CountryPicker } from "react-native-country-codes-picker";
 import { Fonts } from "../../asset/fonts/Font";
 import { ImageConstant } from "../constants/ImageConstant";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
 
-const InputComponent = () => {
+const Input = () => {
    useEffect(() => {
       setCountryName('India');
       setCountryCode('+91');
@@ -27,15 +27,15 @@ const InputComponent = () => {
 
   return (
     <View>
-      <TextComponent
-        size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{
+      <Typography
+        size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{
           marginTop: 20,
-        }}>COUNTRY</TextComponent>
+        }}>COUNTRY</Typography>
       <TouchableOpacity style={styles.input} onPress={() => setIsVisible(true)}>
-        <TextComponent
-          size={16} styles_font={{ marginRight: 10, }}>{selectedCountry}</TextComponent>
-        <TextComponent size={16} width={270} color={Colors.Darkgrey}>
-          {countryName ? countryName : "Select Country"}</TextComponent>
+        <Typography
+          size={16} styles_font={{ marginRight: 10, }}>{selectedCountry}</Typography>
+        <Typography size={16} width={270} color={Colors.Darkgrey}>
+          {countryName ? countryName : "Select Country"}</Typography>
         <Image style={styles.down} source={ImageConstant.Down} />
       </TouchableOpacity>
       <CountryPicker
@@ -49,12 +49,12 @@ const InputComponent = () => {
         }}
       />
 
-      <TextComponent size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{
+      <Typography size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{
         marginLeft: 20,
         marginTop: 20,
-      }}>PHONE</TextComponent>
+      }}>PHONE</Typography>
       <View style={{ flexDirection: "row", }}>
-        <TextComponent size={16} weight={"700"} color={Colors.Black} styles_font={styles.code} width={70}>{countryCode}</TextComponent>
+        <Typography size={16} font={Fonts.SF_Bold1} color={Colors.Black} styles_font={styles.code} width={70}>{countryCode}</Typography>
         <TextInput style={styles.number} keyboardType="numeric" />
       </View>
     </View>
@@ -94,4 +94,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InputComponent;
+export default Input;

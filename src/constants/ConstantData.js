@@ -38,4 +38,10 @@
                 text: "Mauris quis orci faucibus, egestas nibh sed vestibulum elit. Nam est dui, accumsan a lorem tincidunt, pellentesque pulvinar lorem."
             },
         ];
+
+        export const Forum = [
+            { id: 1, image: require('../../asset/images/forum1.png'), title: "Title", text: "Lorem ipsum dolor sit amet consectetur. Urnascelerisque bibendum blandit vel tempus sodales gravida ut gravida. Mi viverra tincidunt cras donec diam cras.", like: require('../../asset/images/thumbup.png'), unlike: require('../../asset/images/thumbdown.png'), comment: require('../../asset/images/comment.png'), number: "100" },
+            { id: 2, image: require('../../asset/images/forum2.png'), title: "Title", text: "Lorem ipsum dolor sit amet consectetur. Urna scelerisque bibendum blandit vel tempus sodales gravida ut gravida. Mi viverra tincidunt cras donec diam ras.", like: require('../../asset/images/thumbup.png'), unlike: require('../../asset/images/thumbdown.png'), comment: require('../../asset/images/comment.png'), number: "100" },
+            { id: 3, image: require('../../asset/images/forum3.png'), title: "Title", text: "Lorem ipsum dolor sit amet consectetur. Urna scelerisque bibendum blandit vel tempus sodales gravida ut gravida. Mi viverra tincidunt cras donec diam cras.", like: require('../../asset/images/thumbup.png'), unlike: require('../../asset/images/thumbdown.png'), comment: require('../../asset/images/comment.png'), number: "100" },
+        ];
     // };

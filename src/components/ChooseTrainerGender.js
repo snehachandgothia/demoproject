@@ -3,7 +3,7 @@ import { TouchableOpacity, View ,Image, StyleSheet} from "react-native";
 // import { Image } from "react-native-svg";
 import { ImageConstant } from "../constants/ImageConstant";
 import { Colors } from "../constants/Colors";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Fonts } from "../../asset/fonts/Font";
 
 const ChooseTrainerGender=()=>{
@@ -33,8 +33,8 @@ const ChooseTrainerGender=()=>{
                 <Image source={ImageConstant.Female}
                 style={[styles.image,{tintColor:female?Colors.White:Colors.Pink}]}/>
             </TouchableOpacity>
-            <TextComponent size={14} color={Colors.Grey} alignSelf={"center"}
-            >Female</TextComponent>
+            <Typography size={14} color={Colors.Grey} alignSelf={"center"}
+            >Female</Typography>
 </View>
 
             <View style={{marginLeft:15}}>
@@ -44,8 +44,8 @@ const ChooseTrainerGender=()=>{
                     <Image source={ImageConstant.Male}
                     style={[styles.image,{tintColor:male?Colors.White:Colors.Pink}]}/>
                 </TouchableOpacity>
-                <TextComponent size={14} color={Colors.Grey} alignSelf={"center"}
-            >Male</TextComponent>
+                <Typography size={14} color={Colors.Grey} alignSelf={"center"}
+            >Male</Typography>
             </View>
         </View>
     )

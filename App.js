@@ -4,35 +4,25 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MyStack from './navigation/AuthStack';
 import { StatusBar, View, Alert, Button } from "react-native";
 import Home from './src/screens/tabScreens/Home';
-import Notification from './src/screens/auth/Notifications';
-import NotificationDetail from './src/screens/auth/NotificatonDetail';
-import InputComponent from './src/components/InputComponent';
-import Filter from './src/screens/traineescreens/Filter';
-import CreateProfile from './src/screens/auth/CreateProfile';
 import messaging from '@react-native-firebase/messaging';
 import { fcmService } from './src/notification/FMCService';
 import { localNotificationService } from './src/notification/LocalNotificationService';
 import PushNotification from 'react-native-push-notification';
 import auth from '@react-native-firebase/app';
 import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
-import UpdateProfile from './src/screens/auth/UpdateProfile';
+import LocalNotification from './src/components/LocalNotification';
 import ChooseCategory from './src/screens/auth/ChooseCategory';
-import CreateSession from './src/screens/auth/CreateSession';
-import TrainerLocation from './src/screens/auth/TrainerLocation';
-import TrainerAddress from './src/screens/auth/TrainerAddress';
-import TrainerProfile from './src/screens/auth/TrainerProfile';
-import MySessions from './src/screens/auth/MySessions';
+import SignUp from './src/screens/auth/SignUp';
+import Booking from './src/screens/tabScreens/Booking';
 
 const getToken = async () => {
    try {
       const token = await messaging().getToken();
       if (token) {
          console.log('FCM Token:', token);
-         return token;
-      }
+         return token;}
    } catch (error) {
-      console.log('Error fetching FCM token:', error);
-   }
+      console.log('Error fetching FCM token:', error);}
 };
 
 // const messageListener = async () => {
@@ -43,14 +33,14 @@ const getToken = async () => {
 
 const handleLocalNotification = () => {
    PushNotification.localNotification({
-      channelId: 'channel-id', // Make sure this channel exists in Android
+      channelId: 'channel-id',
       title: 'Local Notification',
       message: 'This is a test local notification',
       playSound: true,
       soundName: 'default',
       number: 1,
    });
-}; 2
+};
 
 const App = () => {
    useEffect(() => {
@@ -65,28 +55,14 @@ const App = () => {
    }, []);
 
    async function onFacebookButtonPress() {
-      // Attempt login with permissions
       const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
-
       if (result.isCancelled) {
-         throw 'User cancelled the login process';
-      }
-
-      // Once signed in, get the users AccessToken
+         throw 'User cancelled the login process';}
       const data = await AccessToken.getCurrentAccessToken();
-
       if (!data) {
-         throw 'Something went wrong obtaining access token';
-      }
-
-      // Create a Firebase credential with the AccessToken
+         throw 'Something went wrong obtaining access token';}
       const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
-
-      // Sign-in the user with the credential
-      return auth().signInWithCredential(facebookCredential);
-   }
-
-
+      return auth().signInWithCredential(facebookCredential);}
 
    return (
       <GestureHandlerRootView style={{ flex: 1 }}>
@@ -94,15 +70,12 @@ const App = () => {
          {/* <MyStack/> */}
          <View>
             {/* {/* <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/> */}
-        <MySessions/>  
-            {/* <Button title='Notification' onPress={handleLocalNotification}
-            /> */}
+        <Home/>  
+            {/* <Button title='Notification' onPress={handleLocalNotification}/> */}
 
             {/* <Button
                title="Facebook Sign-In"
-               onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}
-            /> */}
-
+               onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}/> */}
          </View>
       </GestureHandlerRootView>
 

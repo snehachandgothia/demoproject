@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ImageConstant } from "../../constants/ImageConstant";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import ChooseTrainerGender from "../../components/ChooseTrainerGender";
+import { Fonts } from "../../../asset/fonts/Font";
 // import rnRangeSlider from "rn-range-slider";
 import RnRangeSlider from "rn-range-slider";
 
@@ -17,36 +18,36 @@ const Filter=()=>{
     return(
         <ScrollView style={{}}>
             <View style={styles.view}>
-                <TextComponent size={20} color={Colors.Grey}>Save your searches</TextComponent>
+                <Typography size={20} color={Colors.Grey}>Save your searches</Typography>
 <TouchableOpacity>
     <Image source={ImageConstant.Cancel}/>
 </TouchableOpacity>
             </View>
             <View style={[styles.view,styles.border,{marginTop:20}]}>
-                <TextComponent size={34} weight={"700"} color={Colors.Darkgrey}
-                >Filters</TextComponent>
+                <Typography size={34} font={Fonts.SF_Bold1} color={Colors.Darkgrey}
+                >Filters</Typography>
                 <TouchableOpacity style={{marginTop:20}}>
-                    <TextComponent size={12} weight={"700"} color={Colors.Darkgrey}>Clear filters</TextComponent>
+                    <Typography size={12} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>Clear filters</Typography>
                 </TouchableOpacity>
             </View>
            <TouchableOpacity style={[styles.view,styles.border,{marginTop:10}]}>
-            <TextComponent size={20} color={Colors.Darkgrey} left={10} mhorizontal={15}
-            >Select sport category</TextComponent>
+            <Typography size={20} color={Colors.Darkgrey} left={10} mhorizontal={15}
+            >Select sport category</Typography>
             <Image style={{marginTop:10}}
             source={ImageConstant.RightArrow}/>
            </TouchableOpacity>
            <TouchableOpacity style={[styles.view,styles.border,{marginTop:10}]}>
-            <TextComponent size={20} color={Colors.Darkgrey} left={10} mhorizontal={20}
-            >Select location</TextComponent>
+            <Typography size={20} color={Colors.Darkgrey} left={10} mhorizontal={20}
+            >Select location</Typography>
             <Image style={{marginTop:10}}
             source={ImageConstant.RightArrow}/>
            </TouchableOpacity>
-           <TextComponent size={20} color={Colors.Darkgrey} left={15} styles_font={{marginTop:10}}
-           >Trainer gender</TextComponent>
+           <Typography size={20} color={Colors.Darkgrey} left={15} styles_font={{marginTop:10}}
+           >Trainer gender</Typography>
            <View></View>
            <ChooseTrainerGender/>
-           <TextComponent size={20} color={Colors.Darkgrey} left={15} styles_font={{marginTop:15}}
-           >Age</TextComponent>
+           <Typography size={20} color={Colors.Darkgrey} left={15} styles_font={{marginTop:15}}
+           >Age</Typography>
 {/* <View>
         <RnRangeSlider
         style={{width:"90%"}}

@@ -1,8 +1,9 @@
 import React from "react";
 import { FlatList, Image, StatusBar, StyleSheet, View } from "react-native";
 import Header from "../../components/Header";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
+import { Fonts } from "../../../asset/fonts/Font";
 
 const Notification=()=>{
     const Data=[
@@ -22,12 +23,12 @@ const Notification=()=>{
                     <Image style={{marginLeft:15}}
                     source={item.image}/>
                     <View style={{marginLeft:10}}>
-                        <TextComponent
-                        size={17} weight={"700"} color={Colors.Darkgrey}>{item.sender}</TextComponent>
-                        <TextComponent
-                        size={14} weight={"400"} color={Colors.Darkgrey} width={300}>{item.message}</TextComponent>
-                        <TextComponent
-                        size={14} weight={"400"} color={Colors.Grey}>{item.timing}</TextComponent>
+                        <Typography
+                        size={17} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>{item.sender}</Typography>
+                        <Typography
+                        size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} width={300}>{item.message}</Typography>
+                        <Typography
+                        size={14} font={Fonts.SF_Regular1} color={Colors.Grey}>{item.timing}</Typography>
                     </View>
                 </View>
     )}

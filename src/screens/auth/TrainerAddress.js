@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Image, StyleSheet, View, StatusBar, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import { ImageConstant } from "../../constants/ImageConstant";
 import { TextInput } from "react-native-gesture-handler";
-import NextButton from "../../components/NextButton";
-import TextComponent from "../../components/TextComponent";
+import MainButton from "../../components/MainButton";
+import Typography from "../../components/Typography";
 import { Fonts } from "../../../asset/fonts/Font";
 import { Colors } from "../../constants/Colors";
 
 const TrainerAddress = ({ navigation }) => {
-  // State variables for each input field
   const [flatVillaNo, setFlatVillaNo] = useState("");
   const [buildingVilla, setBuildingVilla] = useState("");
   const [street, setStreet] = useState("");
@@ -23,36 +22,36 @@ const TrainerAddress = ({ navigation }) => {
       </TouchableOpacity>
 
       <View style={styles.view}>
-        <TextComponent
+        <Typography
           size={18}
-          weight={"400"}
+          font={Fonts.SF_Regular1}
           color={Colors.Darkgrey}
           left={30}
-        >New Address</TextComponent>
+        >New Address</Typography>
       </View>
       <TouchableOpacity style={[styles.view, { flexDirection: "row", marginTop: 15 }]}>
         <Image style={styles.location} source={ImageConstant.Location} />
         <View style={{ marginLeft: 10 }}>
-          <TextComponent
+          <Typography
             size={16}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Darkgrey}
-          >Pin Location</TextComponent>
-          <TextComponent
+          >Pin Location</Typography>
+          <Typography
             size={14}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Grey}
-          >Gardens Blvd, Opp Discovery Garden</TextComponent>
+          >Gardens Blvd, Opp Discovery Garden</Typography>
         </View>
       </TouchableOpacity>
       
       <View style={{ flexDirection: "row" }}>
         <View style={styles.box}>
-          <TextComponent
+          <Typography
             size={14}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Grey}
-          >Flat/Villa No.</TextComponent>
+          >Flat/Villa No.</Typography>
           <View style={styles.inputbox}>
             <TextInput
               style={styles.input}
@@ -65,11 +64,11 @@ const TrainerAddress = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.box}>
-          <TextComponent
+          <Typography
             size={14}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Grey}
-          >Building/Villa</TextComponent>
+          >Building/Villa</Typography>
           <View style={styles.inputbox}>
             <TextInput
               style={styles.input}
@@ -85,11 +84,11 @@ const TrainerAddress = ({ navigation }) => {
 
       <View style={{ flexDirection: "row" }}>
         <View style={styles.box}>
-          <TextComponent
+          <Typography
             size={14}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Grey}
-          >Street</TextComponent>
+          >Street</Typography>
           <View style={styles.inputbox}>
             <TextInput
               style={styles.input}
@@ -102,11 +101,11 @@ const TrainerAddress = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.box}>
-          <TextComponent
+          <Typography
             size={14}
-            weight={"400"}
+            font={Fonts.SF_Regular1}
             color={Colors.Grey}
-          >Area</TextComponent>
+          >Area</Typography>
           <View style={styles.inputbox}>
             <TextInput
               style={styles.input}
@@ -121,7 +120,7 @@ const TrainerAddress = ({ navigation }) => {
       </View>
 
       <TouchableOpacity style={{ marginTop: 355 }}>
-        <NextButton title={'CONTINUE'} />
+        <MainButton title={'CONTINUE'} />
       </TouchableOpacity>
       </KeyboardAvoidingView>
     </View>

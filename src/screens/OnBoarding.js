@@ -4,7 +4,7 @@
 import React, { useState, useRef } from "react";
 import { View, Dimensions, Image, Text, StatusBar, FlatList, StyleSheet, TouchableOpacity, } from "react-native";
 import { windowWidth } from "../constants/Dimensions";
-import TextComponent from "../components/TextComponent";
+import Typography from "../components/Typography";
 import { Colors } from "../constants/Colors";
 import { Data } from "../constants/ConstantData";
 import { Fonts } from "../../asset/fonts/Font";
@@ -26,15 +26,15 @@ const OnBoarding = ({ navigation }) => {
     const renderItem = ({ item }) => (
         <View >
             <Image style={styles.image} source={item.image} />
-            <TextComponent
+            <Typography
                 size={30} font={Fonts.SF_Regular1} color={Colors.Darkgrey}  styles_font={{alignSelf: "center",marginTop: 30
-                }}>{item.title}</TextComponent>
+                }}>{item.title}</Typography>
             <View style={{ width: windowWidth }}>
-                <TextComponent
+                <Typography
                     size={14} font={Fonts.SF_Regular1} color={Colors.Grey} textAlign={"center"} styles_font={{
                         alignSelf: "center",
                         textAlign: "center", marginTop: 20,
-                    }} width={280}>{item.text}</TextComponent>
+                    }} width={280}>{item.text}</Typography>
             </View>
         </View>
     );
@@ -71,8 +71,8 @@ const OnBoarding = ({ navigation }) => {
                 </View>
                 <View style={styles.button} >
                     <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
-                        <TextComponent size={16} font={Fonts.SF_Regular1} color={Colors.Blue}>
-                            {currentIndex === Data.length - 1 ? "Start!" : "Skip"}</TextComponent>
+                        <Typography size={16} font={Fonts.SF_Regular1} color={Colors.Blue}>
+                            {currentIndex === Data.length - 1 ? "Start!" : "Skip"}</Typography>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -2,10 +2,11 @@ import React from "react";
 import { Image, StatusBar, StyleSheet, TextInput, TouchableOpacity, View ,ScrollView} from "react-native";
 import Header from "../../components/Header";
 import { ImageConstant } from "../../constants/ImageConstant";
-import TextComponent from "../../components/TextComponent";
+import Typography from "../../components/Typography";
 import RateClient from "../../components/RateClient";
-import NextButton from "../../components/NextButton";
+import MainButton from "../../components/MainButton";
 import { Colors } from "../../constants/Colors";
+import { Fonts } from "../../../asset/fonts/Font";
 
 const NotificationDetail=()=>{
     return(
@@ -16,52 +17,52 @@ const NotificationDetail=()=>{
                 <View style={{flexDirection:"row"}}>
                 <Image source={ImageConstant.Review}/>
                 <View style={{marginLeft:10}}>
-                    <TextComponent
-                    size={18} weight={"700"} color={Colors.Darkgrey}>Anna Maria, 30</TextComponent>
+                    <Typography
+                    size={18} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>Anna Maria, 30</Typography>
                     <View style={{flexDirection:"row",marginTop:2}}>
                         <Image style={{marginTop:2}}
                         source={ImageConstant.Stars}/>
-                        <TextComponent
-                        size={12} weight={"400"} color={Colors.Grey} styles_font={{marginLeft:5}}>145 Reviews</TextComponent>
+                        <Typography
+                        size={12} font={Fonts.SF_Regular1} color={Colors.Grey} left={5}>145 Reviews</Typography>
                     </View>
                 </View>
                 </View>
                 <View style={{flexDirection:"row"}}>
                     <Image style={{height:14,width:11,marginTop:4}}
                      source={ImageConstant.Location}/>
-                    <TextComponent
-                     size={14} weight={"400"} color={Colors.Grey} styles_font={{marginLeft:5}}>Trainer Location / User Location</TextComponent>
+                    <Typography
+                     size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={5}>Trainer Location / User Location</Typography>
                 </View>
                 <View style={{flexDirection:"row",marginTop:5}}>
-                        <TextComponent
-                        size={14} weight={"700"} color={Colors.Darkgrey}>Sports:</TextComponent>
-                        <TextComponent
-                        size={14} weight={"400"} color={Colors.Darkgrey}> Karate</TextComponent>
-                    <TextComponent
-                    size={18} weight={"700"} color={Colors.Darkgrey} styles_font={{marginLeft:200}}>$ 50</TextComponent>
+                        <Typography
+                        size={14} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>Sports:</Typography>
+                        <Typography
+                        size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}> Karate</Typography>
+                    <Typography
+                    size={18} font={Fonts.SF_Bold1} color={Colors.Darkgrey} left={200} >$ 50</Typography>
                 </View>
                 <View style={{flexDirection:"row"}}>
-                  <TextComponent
-                  size={14} weight={"700"} color={Colors.Darkgrey}>Date: </TextComponent>
-                  <TextComponent
-                  size={14} weight={"400"} color={Colors.Darkgrey}> Tue 12:11</TextComponent>
-                  <TextComponent
-                  size={14} weight={"700"} color={Colors.Darkgrey} styles_font={{marginLeft:25}}>Time: </TextComponent>
-                  <TextComponent
-                  size={14} weight={"400"} color={Colors.Darkgrey}> 12:00-13:00</TextComponent>
+                  <Typography
+                  size={14} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>Date: </Typography>
+                  <Typography
+                  size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}> Tue 12:11</Typography>
+                  <Typography
+                  size={14} font={Fonts.SF_Bold1} color={Colors.Darkgrey} left={25}>Time: </Typography>
+                  <Typography
+                  size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}> 12:00-13:00</Typography>
                 </View>
             </View>
-            <TextComponent
-            size={14} weight={"400"} color={Colors.Grey} styles_font={{marginLeft:25,marginTop:10}}>Rate Clients</TextComponent>
+            <Typography
+            size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={25} styles_font={{marginTop:10}}>Rate Clients</Typography>
             <RateClient title={"Effeciency"}/>
             <RateClient title={"Motivation"}/>
             <RateClient title={"Tolerance"}/>
             <RateClient title={"Socialibility"}/>
-            <TextComponent
-            size={14} weight={"400"} color={Colors.Grey} styles_font={{marginLeft:25,marginVertical:15}}>Add feedback</TextComponent>
+            <Typography
+            size={14} font={Fonts.SF_Regular1} color={Colors.Grey} left={25} styles_font={{marginVertical:15}}>Add feedback</Typography>
             <TextInput style={styles.input} multiline />
             <TouchableOpacity style={{marginTop:50}}>
-                <NextButton title={"COMPLETE AND SUBMIT"}/>
+                <MainButton title={"COMPLETE AND SUBMIT"}/>
             </TouchableOpacity>
         </ScrollView>
     )

@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
+import { Fonts } from "../../asset/fonts/Font";
 
-const ButtonComponents=({text,style_bgcolor,style_color})=>{
+const Button=({text,style_bgcolor,style_color})=>{
     return(
         <View style={[styles.button,style_bgcolor]}>
-                <TextComponent size={18} weight={"700"} color={style_color}>{text}</TextComponent>
+                <Typography size={18} font={Fonts.SF_Bold1} color={style_color}>{text}</Typography>
         </View>
     )
 };
@@ -18,4 +19,4 @@ const styles=StyleSheet.create({
     }
 })
 
-export default ButtonComponents;
+export default Button;

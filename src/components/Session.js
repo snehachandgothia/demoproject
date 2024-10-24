@@ -2,10 +2,11 @@ import React from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageConstant } from "../constants/ImageConstant";
-import TextComponent from "./TextComponent";
+import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
+import { Fonts } from "../../asset/fonts/Font";
 
-const SessionComponent=()=>{
+const Session=()=>{
     const Data=[
         {id:1,title:"Boxing",text:"Dribbling",time:"Duration:30",location:"Location:Trainer",
             price:"80AED"},
@@ -16,24 +17,24 @@ const SessionComponent=()=>{
     const render=({item})=>(
         <View style={styles.view}>
            <View style={{flexDirection:"row"}}>
-           <TextComponent
-           size={16} weight={"700"} color={Colors.Darkgrey}>{item.title}</TextComponent>
+           <Typography
+           size={16} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>{item.title}</Typography>
            <TouchableOpacity>
            <Image style={styles.cancel}
            source={ImageConstant.Cancel}/>
            </TouchableOpacity>
            </View>
-           <TextComponent
-           size={14} weight={"400"} color={Colors.Darkgrey}>{item.text}</TextComponent>
-           <TextComponent
-           size={14} weight={"400"} color={Colors.Darkgrey}>{item.time}</TextComponent>
-           <TextComponent 
-           size={14} weight={"400"} color={Colors.Darkgrey}>{item.location}</TextComponent>
-           <TextComponent
-           size={22} weight={"700"} color={Colors.Darkgrey}>{item.price}</TextComponent>
+           <Typography
+           size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>{item.text}</Typography>
+           <Typography
+           size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>{item.time}</Typography>
+           <Typography 
+           size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey}>{item.location}</Typography>
+           <Typography
+           size={22} font={Fonts.SF_Bold1} color={Colors.Darkgrey}>{item.price}</Typography>
            <TouchableOpacity style={styles.button}>
-            <TextComponent
-            size={12} weight={"400"} color={Colors.White} styles_font={{alignSelf:"center",}}>Create Packages</TextComponent>
+            <Typography
+            size={12} font={Fonts.SF_Regular1} color={Colors.White} styles_font={{alignSelf:"center",}}>Create Packages</Typography>
            </TouchableOpacity>
         </View>
     )
@@ -75,4 +76,4 @@ const styles=StyleSheet.create({
     },
 })
 
-export default SessionComponent;
+export default Session;

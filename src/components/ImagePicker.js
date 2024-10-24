@@ -4,8 +4,9 @@ import { ImageConstant } from '../constants/ImageConstant';
 import ImagePicker from 'react-native-image-crop-picker';
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { Platform } from 'react-native';
-import TextComponent from './TextComponent';
+import Typography from './Typography';
 import { Colors } from '../constants/Colors';
+import { Fonts } from '../../asset/fonts/Font';
 
 const Imagepicker = () => {
   const [images, setImages] = useState([]);
@@ -83,13 +84,13 @@ const Imagepicker = () => {
             </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={requestCameraPermission}>
             <Image  style={styles.camera} source={ImageConstant.Camera}/> 
-            <TextComponent size={16} weight={"600"} color={Colors.Darkgrey}>
-              Open Camera</TextComponent>
+            <Typography size={16} font={Fonts.SF_Medium1} color={Colors.Darkgrey}>
+              Open Camera</Typography>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={pickMultipleImages}>
             <Image style={styles.camera} source={ImageConstant.Gallery}/>
-            <TextComponent
-            size={16} weight={"600"} color={Colors.Darkgrey}>Open Gallery</TextComponent>
+            <Typography
+            size={16} font={Fonts.SF_Medium1} color={Colors.Darkgrey}>Open Gallery</Typography>
           </TouchableOpacity>
         </View>
       </Modal>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Animated } from 'react-native';
-import TextComponent from './TextComponent';
+import Typography from './Typography';
 import { Colors } from '../constants/Colors';
+import { Fonts } from '../../asset/fonts/Font';
 
 const CustomSwitch = ({ isEnabled, toggleSwitch }) => {
   const animatedValue = new Animated.Value(isEnabled ? 1 : 0);
@@ -87,13 +88,13 @@ const Switchcustom = () => {
   return (
     <View >
 <View style={styles.view}>
-    <TextComponent
-    size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Female</TextComponent>
+    <Typography
+    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Female</Typography>
       <CustomSwitch isEnabled={isEnabled} toggleSwitch={toggleSwitch1} />
 </View>
 <View style={styles.view}>
-  <TextComponent
-    size={14} weight={"400"} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Male</TextComponent>
+  <Typography
+    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Male</Typography>
 <CustomSwitch isEnabled={enable} toggleSwitch={toggleswitch2}/>
 </View>
     </View>
