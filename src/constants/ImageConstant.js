@@ -35,5 +35,7 @@ export const ImageConstant={
     Ratingstar:require('../../asset/images/ratingstar.png'),
     Yellowstar:require('../../asset/images/yellowstar.png'),
     Female:require('../../asset/images/female.png'),
-    Male:require('../../asset/images/male.png')
+    Male:require('../../asset/images/male.png'),
+    comment:require('../../asset/images/comment.png'),
+    Send:require('../../asset/images/send.png')
     };

@@ -8,17 +8,15 @@ import { Week_of_month,MonthName } from "../constants/ConstantData";
 // moment library for dates days
 
 const AgendaCalender = () => {
-    // const Week_of_month = [
-    //     { id: 1, day: "Sun", fullday: "Sunday" },
-    //     { id: 2, day: "Mon", fullday: "Monday" },
-    //     { id: 3, day: "Tue", fullday: "Tuesday" },
-    //     { id: 4, day: "Wed", fullday: "Wednesday" },
-    //     { id: 5, day: "Thu", fullday: "Thursday" },
-    //     { id: 6, day: "Fri", fullday: "Friday" },
-    //     { id: 7, day: "Sat", fullday: "Saturday" }
-    // ];
-
-    // const Monthweek= ConstantData.Week_of_month;
+    const Week_of_month = [
+        { id: 1, day: "Sun", fullday: "Sunday" },
+        { id: 2, day: "Mon", fullday: "Monday" },
+        { id: 3, day: "Tue", fullday: "Tuesday" },
+        { id: 4, day: "Wed", fullday: "Wednesday" },
+        { id: 5, day: "Thu", fullday: "Thursday" },
+        { id: 6, day: "Fri", fullday: "Friday" },
+        { id: 7, day: "Sat", fullday: "Saturday" }
+    ];
 
     // const MonthName = [
     //     { id: 1, title: "Jan" },
@@ -46,7 +44,7 @@ const AgendaCalender = () => {
 
     const [currentDayOfMonth, setCurrentDayOfMonth] = useState(currentDay);
     const [currentWeekDayName, setCurrentWeekDayName] = useState(Week_of_month[currentWeekDay].fullday);
-
+    
     const getDayOfWeek = (dayOfMonth) => {
         const tempDate = new Date(year, currentMonth, dayOfMonth);
         return Week_of_month[tempDate.getDay()].day;
