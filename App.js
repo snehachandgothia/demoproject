@@ -10,10 +10,11 @@ import { localNotificationService } from './src/notification/LocalNotificationSe
 import PushNotification from 'react-native-push-notification';
 import auth from '@react-native-firebase/app';
 import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
-import LocalNotification from './src/components/LocalNotification';
-import ChooseCategory from './src/screens/auth/ChooseCategory';
-import SignUp from './src/screens/auth/SignUp';
 import Booking from './src/screens/tabScreens/Booking';
+import BookingFlatlist from './src/components/BookingFlatlist';
+import BookingPrevious from './src/components/BookingPrevious';
+import UpcomingDetails from './src/screens/tabScreens/UpcomingDetails';
+import UpcomingdetailModal from './src/components/UpcomingdetailModal';
 
 const getToken = async () => {
    try {
@@ -70,7 +71,7 @@ const App = () => {
          {/* <MyStack/> */}
          <View>
             {/* {/* <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/> */}
-        <Home/>  
+        <UpcomingdetailModal/>  
             {/* <Button title='Notification' onPress={handleLocalNotification}/> */}
 
             {/* <Button

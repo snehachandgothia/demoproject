@@ -1,38 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import { Text, View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { Fonts } from "../../asset/fonts/Font";
 import Typography from "./Typography";
 import { Colors } from "../constants/Colors";
 import { Week_of_month,MonthName } from "../constants/ConstantData";
-// moment library for dates days
 
 const AgendaCalender = () => {
-    const Week_of_month = [
-        { id: 1, day: "Sun", fullday: "Sunday" },
-        { id: 2, day: "Mon", fullday: "Monday" },
-        { id: 3, day: "Tue", fullday: "Tuesday" },
-        { id: 4, day: "Wed", fullday: "Wednesday" },
-        { id: 5, day: "Thu", fullday: "Thursday" },
-        { id: 6, day: "Fri", fullday: "Friday" },
-        { id: 7, day: "Sat", fullday: "Saturday" }
-    ];
-
-    // const MonthName = [
-    //     { id: 1, title: "Jan" },
-    //     { id: 2, title: "Feb" },
-    //     { id: 3, title: "Mar" },
-    //     { id: 4, title: "Apr" },
-    //     { id: 5, title: "May" },
-    //     { id: 6, title: "Jun" },
-    //     { id: 7, title: "Jul" },
-    //     { id: 8, title: "Aug" },
-    //     { id: 9, title: "Sep" },
-    //     { id: 10, title: "Oct" },
-    //     { id: 11, title: "Nov" },
-    //     { id: 12, title: "Dec" }
-    // ];
-
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
     const currentMonth = currentDate.getMonth();
@@ -44,14 +18,42 @@ const AgendaCalender = () => {
 
     const [currentDayOfMonth, setCurrentDayOfMonth] = useState(currentDay);
     const [currentWeekDayName, setCurrentWeekDayName] = useState(Week_of_month[currentWeekDay].fullday);
-    
+
+const ShowFullDay=()=>{
+   if(item === currentDayOfMonth){
+    setCurrentWeekDayName()
+   }
+};
+
+    //to show cuurent on screen opening
+    const flatListRef = useRef(null);
+    const currentDayIndex = Dateofmonth.indexOf(currentDay);
+
+    useEffect(() => {
+        if (flatListRef.current && currentDayIndex !== -1) {
+            flatListRef.current.scrollToIndex({
+                // animated: true,
+                index: currentDayIndex,
+                // viewPosition: 0.5
+            });
+        }
+    }, [currentDayIndex]);
+
+
+
     const getDayOfWeek = (dayOfMonth) => {
         const tempDate = new Date(year, currentMonth, dayOfMonth);
         return Week_of_month[tempDate.getDay()].day;
     };
+
+    const getDayWeek = (dayOfMonth) => {
+        const tempDate = new Date(year, currentMonth, dayOfMonth);
+        return Week_of_month[tempDate.getDay()].fullday;
+    };
+
     const handleSelect = (dayOfMonth) => {
         setCurrentDayOfMonth(dayOfMonth);
-        setCurrentWeekDayName(getDayOfWeek(dayOfMonth));
+        setCurrentWeekDayName(getDayWeek(dayOfMonth));
     };
 
         return (
@@ -60,6 +62,7 @@ const AgendaCalender = () => {
                     start={{ x: 1, y: 0}} end={{ x: 1, y: 1 }}
                     style={styles.calendarContainer}>
                     <FlatList
+                        ref={flatListRef}
                         data={Dateofmonth}
                         horizontal
                         keyExtractor={(item) => item.toString()}
@@ -87,6 +90,15 @@ const AgendaCalender = () => {
                                 )}
                             </TouchableOpacity>
                         )}
+                        //to show current date on screen opening
+                        getItemLayout={(data, index) => (
+                            { length: 50, offset: 50 * index, index } 
+                        )}
+                        onScrollToIndexFailed={(info) => {
+                            // console.warn("Scroll to index failed, scrolling to fallback index:", info.index);
+                            // flatListRef.current.scrollToIndex({ index: info.index, animated: true });
+                        }}
+                    
                     />
                 </LinearGradient>
                 <View style={styles.view}>

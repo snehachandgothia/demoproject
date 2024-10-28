@@ -27,5 +27,9 @@ export const Colors = {
     Switchgreen:"#00D856",
     LGdarkblue:"#13359B",
     LGskyblue:"#2251D84D",
-    Greyicon:"#666666"
+    Greyicon:"#666666",
+    Backgroundorange:"#FFC70033",
+    Backgroundgreen:"#00FF6633",
+    Backgroundpink:"#FF77704D",
+    Backgroundskyblue:"#AFD8FF"
 };
