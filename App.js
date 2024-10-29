@@ -71,7 +71,7 @@ const App = () => {
          {/* <MyStack/> */}
          <View>
             {/* {/* <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/> */}
-        <UpcomingdetailModal/>  
+        <UpcomingDetails/>  
             {/* <Button title='Notification' onPress={handleLocalNotification}/> */}
 
             {/* <Button

@@ -18,10 +18,10 @@ const CreateProfile = ({ navigation }) => {
         try {
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
-            console.log(userInfo);
+            // console.log(userInfo);
             // Navigate or handle user info as needed
             } catch (error) {
-            console.error(error);
+            // console.error(error);
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             Alert.alert("Sign-in cancelled");
             } else if (error.code === statusCodes.IN_PROGRESS) {

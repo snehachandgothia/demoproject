@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { View, TouchableOpacity, StyleSheet, Animated } from 'react-native';
-import Typography from './Typography';
+import React from 'react';
+import { TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import { Colors } from '../constants/Colors';
-import { Fonts } from '../../asset/fonts/Font';
 
 const CustomSwitch = ({ isEnabled, toggleSwitch }) => {
   const animatedValue = new Animated.Value(isEnabled ? 1 : 0);
@@ -18,7 +16,7 @@ const CustomSwitch = ({ isEnabled, toggleSwitch }) => {
 
   const switchAnimation = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 20], 
+    outputRange: [0, 25], 
   });
 
   const backgroundColorAnimation = animatedValue.interpolate({
@@ -67,39 +65,39 @@ const styles = StyleSheet.create({
   }
 });
 
-const Switchcustom = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const [enable,setEnable] = useState(false);
+// const Switchcustom = () => {
+//   const [isEnabled, setIsEnabled] = useState(false);
+//   const [enable,setEnable] = useState(false);
 
-  const toggleSwitch1 = () => {
-    setIsEnabled(!isEnabled);
-    if (!isEnabled){
-      setEnable(false);
-    }
-  };
+//   const toggleSwitch1 = () => {
+//     setIsEnabled(!isEnabled);
+//     if (!isEnabled){
+//       setEnable(false);
+//     }
+//   };
 
-  const toggleswitch2 =() =>{
-    setEnable(!enable);
-    if (!enable){
-      setIsEnabled(false);
-    }
-  }
+//   const toggleswitch2 =() =>{
+//     setEnable(!enable);
+//     if (!enable){
+//       setIsEnabled(false);
+//     }
+//   }
 
-  return (
-    <View >
-<View style={styles.view}>
-    <Typography
-    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Female</Typography>
-      <CustomSwitch isEnabled={isEnabled} toggleSwitch={toggleSwitch1} />
-</View>
-<View style={styles.view}>
-  <Typography
-    size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Male</Typography>
-<CustomSwitch isEnabled={enable} toggleSwitch={toggleswitch2}/>
-</View>
-    </View>
-  );
-};
+//   return (
+//     <View >
+// <View style={styles.view}>
+//     <Typography
+//     size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Female</Typography>
+//       <CustomSwitch isEnabled={isEnabled} toggleSwitch={toggleSwitch1} />
+// </View>
+// <View style={styles.view}>
+//   <Typography
+//     size={14} font={Fonts.SF_Regular1} color={Colors.Darkgrey} styles_font={{marginTop:15,}}>Male</Typography>
+// <CustomSwitch isEnabled={enable} toggleSwitch={toggleswitch2}/>
+// </View>
+//     </View>
+//   );
+// };
 
 
-export default Switchcustom;
+export default CustomSwitch;

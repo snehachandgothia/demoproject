@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useRef } from "react";
-import { Text, View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { Fonts } from "../../asset/fonts/Font";
 import Typography from "./Typography";
@@ -25,7 +25,7 @@ const ShowFullDay=()=>{
    }
 };
 
-    //to show cuurent on screen opening
+    //to show cuurent date on screen opening
     const flatListRef = useRef(null);
     const currentDayIndex = Dateofmonth.indexOf(currentDay);
 
@@ -97,9 +97,7 @@ const ShowFullDay=()=>{
                         onScrollToIndexFailed={(info) => {
                             // console.warn("Scroll to index failed, scrolling to fallback index:", info.index);
                             // flatListRef.current.scrollToIndex({ index: info.index, animated: true });
-                        }}
-                    
-                    />
+                        }}/>
                 </LinearGradient>
                 <View style={styles.view}>
                     <View style={styles.dateInfo}>
