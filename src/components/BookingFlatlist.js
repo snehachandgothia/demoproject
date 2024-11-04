@@ -5,7 +5,7 @@ import Typography from "./Typography";
 import { Fonts } from "../../asset/fonts/Font";
 import { Colors } from "../constants/Colors";
 
-const BookingFlatlist = () => {
+const BookingFlatlist = ({onpress}) => {
     const Bookinglist = [
         { id: 1, image: require('../../asset/images/review.png'), name: "Anna Maria", gender: "Female", rating: (require('../../asset/images/yellowstar.png')), number: "4.6", logo: require('../../asset/images/location.png'), address: "Address Location", sport: "Boxing", date: "Tue 12 11", time: "12:00-13:00", plan: "Future" },
         { id: 1, image: require('../../asset/images/review.png'), name: "Anna Maria", gender: "Female", rating: (require('../../asset/images/yellowstar.png')), number: "4.6", logo: require('../../asset/images/location.png'), address: "Address Location", sport: "Boxing", date: "Tue 12 11", time: "12:00-13:00", plan: "Pending" },
@@ -18,7 +18,7 @@ const BookingFlatlist = () => {
                             data={Bookinglist}
                             keyExtractor={item => item.id.toString()}
                             renderItem={({ item }) => (
-                                <TouchableOpacity style={{marginTop:15}}>
+                                <TouchableOpacity style={{marginTop:15}} onPress={onpress}>
                                                 <View style={{ flexDirection: "row" }}>
                 <Image style={{marginTop:10,marginLeft:10}}
                 source={item.image}/>

@@ -19,7 +19,7 @@ const SignUp=({navigation})=>{
               <Input/>
               </View>
           <TouchableOpacity style={{marginTop:35}}
-           onPress={()=>navigation.navigate('Verify')}>
+           onPress={()=>navigation.navigate('OtpScreen')}>
             <MainButton
             title={'COUNTINUE'}/>
           </TouchableOpacity>

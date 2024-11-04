@@ -11,6 +11,9 @@ import TrainerLocation from "../src/screens/auth/TrainerLocation";
 import LocationCheckBox from "../src/components/LocationcheckBox";
 import TrainerAddress from "../src/screens/auth/TrainerAddress";
 import MySessions from "../src/screens/auth/MySessions";
+import UpcomingDetails from "../src/screens/tabScreens/UpcomingDetails";
+import Notification from "../src/screens/auth/Notifications";
+import NotificationDetail from "../src/screens/auth/NotificatonDetail";
 import TabStack from "./Tab";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -34,6 +37,10 @@ function MyStack(){
                 <Auth.Screen name="TrainerAddress" component={TrainerAddress} options={{headerShown:false}}/>
                 <Auth.Screen name="MySessions" component={MySessions} options={{headerShown:false}}/>
                 <Auth.Screen name="Tab" component={TabStack} options={{headerShown:false}}/>
+                <Auth.Screen name="UpcomingDetails" component={UpcomingDetails} options={{headerShown:false}}/>
+                <Auth.Screen name="Notification" component={Notification} options={{headerShown:false}}/>
+                <Auth.Screen name="NotificationDetail" component={NotificationDetail} options={{headerShown:false}}/>
+
             </Auth.Navigator>
         </NavigationContainer>
     )

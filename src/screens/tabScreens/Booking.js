@@ -7,7 +7,7 @@ import LinearGradient from "react-native-linear-gradient";
 import BookingFlatlist from "../../components/BookingFlatlist";
 import BookingPrevious from "../../components/BookingPrevious";
 
-const Booking=()=>{
+const Booking=({navigation})=>{
   const[selectedTab,setSelectedTab]=useState("Upcoming");
 
 return(
@@ -49,7 +49,7 @@ return(
                 </View>
                 <View>
                 {selectedTab === "Upcoming"?
-<BookingFlatlist/>:<BookingPrevious/>
+<BookingFlatlist onpress={()=>navigation.navigate('UpcomingDetails')}/>:<BookingPrevious/>
                 }</View>
     </ScrollView>
 )

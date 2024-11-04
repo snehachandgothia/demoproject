@@ -1,12 +1,12 @@
 // export const ConstantData=()=>{
       export const Week_of_month = [
-            { id: 1, day: "Sun", fullday: "Sunday" },
-            { id: 2, day: "Mon", fullday: "Monday" },
-            { id: 3, day: "Tue", fullday: "Tuesday" },
-            { id: 4, day: "Wed", fullday: "Wednesday" },
-            { id: 5, day: "Thu", fullday: "Thursday" },
-            { id: 6, day: "Fri", fullday: "Friday" },
-            { id: 7, day: "Sat", fullday: "Saturday" }
+            { id: 1, day: "Sun", fullday: "Sunday", firstletter:"S" },
+            { id: 2, day: "Mon", fullday: "Monday", firstletter:"M" },
+            { id: 3, day: "Tue", fullday: "Tuesday", firstletter:"T" },
+            { id: 4, day: "Wed", fullday: "Wednesday", firstletter:"W" },
+            { id: 5, day: "Thu", fullday: "Thursday", firstletter:"T" },
+            { id: 6, day: "Fri", fullday: "Friday", firstletter:"F" },
+            { id: 7, day: "Sat", fullday: "Saturday", firstletter:"S"}
         ];
 
       export const MonthName = [
@@ -70,5 +70,12 @@
 {id:22,time:"22:00-23:00"},
 {id:23,time:"23:00-24:00"},
 {id:24,time:"24:00-01:00"},            
+        ];
+
+        export const TrainingList=[
+            {id:1,start:"10:00",end:"11:00",user:require("../../asset/images/review.png"),name:"Jone Doe,female,30",course:"swiming",location:"Location address",plan:"RESCHEDULE"},
+            {id:1,start:"10:00",end:"11:00",user:require("../../asset/images/review.png"),name:"Jone Doe,female,30",course:"swiming",location:"Location address",plan:"RESCHEDULE"},
+            {id:1,start:"10:00",end:"11:00",user:"",name:"",course:"",location:"",plan:""},
+            {id:1,start:"10:00",end:"11:00",user:require("../../asset/images/review.png"),name:"Jone Doe,female,30",course:"swiming",location:"Location address",plan:"Pending"},
         ];
     // };

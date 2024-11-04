@@ -37,5 +37,6 @@ export const ImageConstant={
     Female:require('../../asset/images/female.png'),
     Male:require('../../asset/images/male.png'),
     comment:require('../../asset/images/comment.png'),
-    Send:require('../../asset/images/send.png')
+    Send:require('../../asset/images/send.png'),
+    Next:require('../../asset/images/next.png')
     };

@@ -1,11 +1,11 @@
 import React from "react";
-import { FlatList, Image, StatusBar, StyleSheet, View } from "react-native";
+import { FlatList, Image, StatusBar, StyleSheet, TouchableOpacity, View } from "react-native";
 import Header from "../../components/Header";
 import Typography from "../../components/Typography";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 
-const Notification=()=>{
+const Notification=({navigation})=>{
     const Data=[
         {id:1,image:require('../../../asset/images/review.png'),sender:"Stupid Cupid",message:"Hey Sneha this side",timing:"11 minutes ago"},
         {id:1,image:require('../../../asset/images/review.png'),sender:"Stupid Cupid",message:"Hey Sneha this side",timing:"11 minutes ago"},
@@ -14,12 +14,12 @@ const Notification=()=>{
     return(
         <View style={{backgroundColor:Colors.White}}>
             <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/>
-            <Header title={"Notifications"}/>
+            <Header title={"Notifications"} onPress={()=>navigation.navigate('Home')} />
             <FlatList
             data={Data}
             keyExtractor={(item)=>item.toString()}
             renderItem={({item})=>(
-                <View style={styles.view}>
+                <TouchableOpacity style={styles.view} onPress={()=>navigation.navigate('NotificationDetail')}>
                     <Image style={{marginLeft:15}}
                     source={item.image}/>
                     <View style={{marginLeft:10}}>
@@ -30,7 +30,7 @@ const Notification=()=>{
                         <Typography
                         size={14} font={Fonts.SF_Regular1} color={Colors.Grey}>{item.timing}</Typography>
                     </View>
-                </View>
+                </TouchableOpacity>
     )}
             />
         </View>

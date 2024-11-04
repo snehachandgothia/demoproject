@@ -8,11 +8,11 @@ import MainButton from "../../components/MainButton";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../../asset/fonts/Font";
 
-const NotificationDetail=()=>{
+const NotificationDetail=({navigation})=>{
     return(
         <ScrollView style={{backgroundColor:Colors.White}}>
             <StatusBar translucent backgroundColor={"transparent"} barStyle={"dark-content"}/>
-            <Header title={"Notification Detail"}/>
+            <Header title={"Notification Detail"} onPress={()=>navigation.navigate("Notification")}/>
             <View style={styles.view}>
                 <View style={{flexDirection:"row"}}>
                 <Image source={ImageConstant.Review}/>
